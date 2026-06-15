@@ -1,0 +1,1901 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cổng Thông Tin Tổ 3 - Lớp 9A3</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome Icons CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* CSS custom overrides */
+        .marquee-container {
+            overflow: hidden;
+            white-space: nowrap;
+            display: flex;
+            align-items: center;
+        }
+        .marquee-text {
+            display: inline-block;
+            animation: marquee 25s linear infinite;
+        }
+        @keyframes marquee {
+            0% { transform: translate3d(100%, 0, 0); }
+            100% { transform: translate3d(-100%, 0, 0); }
+        }
+        /* Black and White mode for Special Events */
+        .special-event-monochrome {
+            filter: grayscale(100%) !important;
+        }
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 6px;
+            height: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #888;
+            border-radius: 3px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #555;
+        }
+    </style>
+    <script>
+        (function() {
+            try {
+                const urlParams = new URLSearchParams(window.location.search);
+                // Chống sập tuyệt đối: Nếu có tham số safe=true hoặc raw=true, xóa sạch mã hỏng lập tức!
+                if (urlParams.get('safe') === 'true' || urlParams.get('raw') === 'true') {
+                    localStorage.removeItem('t3_god_code');
+                    console.log("Đã kích hoạt Safe Guard: Reset cấu hình tùy biến về trạng thái gốc an toàn.");
+                    return;
+                }
+                const customCode = localStorage.getItem('t3_god_code');
+                if (customCode && customCode.trim() !== '') {
+                    document.open();
+                    document.write(customCode);
+                    document.close();
+                }
+            } catch (e) {
+                console.error("Lỗi sập trang, hệ thống tự phục hồi:", e);
+                localStorage.removeItem('t3_god_code');
+            }
+        })();
+    </script>
+</head>
+<body class="bg-gray-100 text-gray-800 transition-all duration-300 min-h-screen flex flex-col">
+
+    <!-- Top Banner & Slogan -->
+    <div id="topBanner" class="bg-green-600 text-white text-center py-2 px-4 font-bold text-sm md:text-base tracking-wide z-10 shadow-md">
+        <span id="sloganStatic">Tổ 3 lớp 9A3: Học tập theo lời Bác - Sáng bước vững tương lai - Vì một Việt Nam vươn tầm thế giới!</span>
+    </div>
+
+    <div class="max-w-7xl mx-auto w-full bg-white flex-1 flex flex-col shadow-xl" id="mainWrapper">
+        
+        <!-- Header Section -->
+        <header id="headerContainer" class="relative p-6 border-b border-gray-200 flex flex-col md:flex-row justify-between items-center gap-6 overflow-hidden transition-all duration-500 animate-fade-in" style="background: linear-gradient(135deg, #e0f2fe 0%, #ffffff 100%); min-height: 180px;">
+            
+            <!-- Custom Background Thumbnail Managed by Admin -->
+            <div id="headerBgImg" class="absolute inset-0 pointer-events-none bg-center bg-cover opacity-20 transition-all duration-300"></div>
+
+            <div class="flex items-center gap-4 z-10" id="brandHeader">
+                <div id="logoWrapper" class="relative group cursor-pointer">
+                    <div id="logoContainer" class="w-24 h-24 bg-yellow-300 rounded-full border-4 border-red-500 flex flex-col items-center justify-center font-black text-red-600 text-xs shadow-lg text-center p-2 leading-tight transition-all duration-300">
+                        HỘI ĐỒNG TỔ 3 - LỚP 9A3
+                    </div>
+                </div>
+                <div>
+                    <h1 id="webTitle" class="text-3xl font-extrabold text-green-700 tracking-tight">CỔNG THÔNG TIN TỔ 3</h1>
+                    <p id="webSubtitle" class="text-sm font-semibold text-red-500 uppercase">Lớp 9A3 - Niên khóa 2025 - 2026</p>
+                </div>
+            </div>
+
+            <!-- Double-sided Slider: 5 Dieu Bac Day & Noi Quy To 3 & Thong Tin Dac Biet -->
+            <div class="w-full md:w-96 bg-white/90 backdrop-blur border border-green-200 p-4 rounded-xl shadow-md relative z-10 overflow-hidden h-48" id="sliderContainer">
+                <div id="slideContent" class="h-full transition-all duration-300">
+                    <!-- Slide 1: 5 Dieu Bac Day -->
+                    <div class="slide-item block h-full">
+                        <h3 class="font-bold text-green-700 text-sm uppercase mb-2 border-b pb-1 flex justify-between items-center">
+                            <span>5 Điều Bác Hồ Dạy</span>
+                            <span class="text-xs text-gray-400">1 / 3</span>
+                        </h3>
+                        <ul class="text-xs space-y-1 font-semibold text-gray-700">
+                            <li><span class="bg-green-500 text-white rounded-full px-1.5 py-0.5 text-[10px] mr-1">1</span> Yêu Tổ quốc, yêu đồng bào</li>
+                            <li><span class="bg-green-500 text-white rounded-full px-1.5 py-0.5 text-[10px] mr-1">2</span> Học tập tốt, lao động tốt</li>
+                            <li><span class="bg-green-500 text-white rounded-full px-1.5 py-0.5 text-[10px] mr-1">3</span> Đoàn kết tốt, kỷ luật tốt</li>
+                            <li><span class="bg-green-500 text-white rounded-full px-1.5 py-0.5 text-[10px] mr-1">4</span> Giữ gìn vệ sinh thật tốt</li>
+                            <li><span class="bg-green-500 text-white rounded-full px-1.5 py-0.5 text-[10px] mr-1">5</span> Khiêm tốn, thật thà, dũng cảm</li>
+                        </ul>
+                    </div>
+                    <!-- Slide 2: Noi Quy To 3 -->
+                    <div class="slide-item hidden h-full">
+                        <h3 class="font-bold text-red-600 text-sm uppercase mb-2 border-b pb-1 flex justify-between items-center">
+                            <span>Nội Quy Tổ 3</span>
+                            <span class="text-xs text-gray-400">2 / 3</span>
+                        </h3>
+                        <ul class="text-[11px] space-y-1 text-gray-700 font-semibold list-disc pl-4 overflow-y-auto h-32">
+                            <li>Không đi trễ, không sai đồng phục.</li>
+                            <li>Tuân thủ nội quy, không nói chuyện riêng.</li>
+                            <li>Không bỏ trực nhật, không xả rác.</li>
+                            <li>Không ăn vặt, không dùng ĐT khi chưa được phép.</li>
+                            <li>Không gây mất đoàn kết, không cãi tổ trưởng.</li>
+                            <li>Luôn tuân theo nhiệm vụ đề ra, phấn đấu thi đua.</li>
+                        </ul>
+                    </div>
+                    <!-- Slide 3: Thong Tin Dac Biet -->
+                    <div class="slide-item hidden h-full">
+                        <h3 class="font-bold text-blue-700 text-sm uppercase mb-2 border-b pb-1 flex justify-between items-center">
+                            <span>Thông Tin Đặc Biệt</span>
+                            <span class="text-xs text-gray-400">3 / 3</span>
+                        </h3>
+                        <div id="specialSlideText" class="text-xs text-gray-600 font-medium overflow-y-auto h-32 whitespace-pre-line">
+                            Chào mừng các bạn đến với trang chính thức của Tổ 3! Hãy cùng nhau phấn đấu dẫn đầu thi đua tuần này nhé!
+                        </div>
+                    </div>
+                </div>
+                <!-- Control arrows -->
+                <button onclick="changeSlide(-1)" class="absolute left-1 top-1/2 -translate-y-1/2 bg-black/10 hover:bg-black/30 text-gray-800 w-6 h-6 rounded-full flex items-center justify-center font-bold text-xs">❮</button>
+                <button onclick="changeSlide(1)" class="absolute right-1 top-1/2 -translate-y-1/2 bg-black/10 hover:bg-black/30 text-gray-800 w-6 h-6 rounded-full flex items-center justify-center font-bold text-xs">❯</button>
+            </div>
+        </header>
+
+        <!-- Navigation Menu -->
+        <nav id="navBar" class="bg-green-700 text-white flex flex-wrap shadow-md sticky top-0 z-30">
+            <button onclick="switchTab('trangchu')" id="tabBtn-trangchu" class="nav-link flex-1 py-4 px-2 text-center text-xs md:text-sm font-bold border-r border-green-800 hover:bg-green-800 transition-colors flex flex-col items-center gap-1 bg-orange-600">
+                <i class="fa fa-home text-lg"></i> Trang chủ
+            </button>
+            <button onclick="switchTab('gioithieu')" id="tabBtn-gioithieu" class="nav-link flex-1 py-4 px-2 text-center text-xs md:text-sm font-bold border-r border-green-800 hover:bg-green-800 transition-colors flex flex-col items-center gap-1">
+                <i class="fa fa-info-circle text-lg"></i> Giới thiệu
+            </button>
+            <button onclick="switchTab('sanh')" id="tabBtn-sanh" class="nav-link flex-1 py-4 px-2 text-center text-xs md:text-sm font-bold border-r border-green-800 hover:bg-green-800 transition-colors flex flex-col items-center gap-1">
+                <i class="fa fa-comments text-lg"></i> Sảnh Liên Thông
+            </button>
+            <button onclick="switchTab('lichhoatdong')" id="tabBtn-lichhoatdong" class="nav-link flex-1 py-4 px-2 text-center text-xs md:text-sm font-bold border-r border-green-800 hover:bg-green-800 transition-colors flex flex-col items-center gap-1">
+                <i class="fa fa-calendar-alt text-lg"></i> Lịch Hoạt Động
+            </button>
+            <button onclick="switchTab('khenthuong')" id="tabBtn-khenthuong" class="nav-link flex-1 py-4 px-2 text-center text-xs md:text-sm font-bold border-r border-green-800 hover:bg-green-800 transition-colors flex flex-col items-center gap-1">
+                <i class="fa fa-trophy text-lg"></i> Khen thưởng
+            </button>
+            <button onclick="openSothidua()" id="tabBtn-sothidua" class="nav-link flex-1 py-4 px-2 text-center text-xs md:text-sm font-bold border-r border-green-800 hover:bg-green-800 transition-colors flex flex-col items-center gap-1">
+                <i class="fa fa-book text-lg"></i> Sổ Thi Đua
+            </button>
+            <button onclick="switchTab('hoso')" id="tabBtn-hoso" class="nav-link flex-1 py-4 px-2 text-center text-xs md:text-sm font-bold hover:bg-green-800 transition-colors flex flex-col items-center gap-1">
+                <i class="fa fa-user-circle text-lg"></i> Hồ sơ
+            </button>
+        </nav>
+
+        <!-- Marquee Announcement -->
+        <div id="marqueeAnnounce" class="bg-yellow-50 border-b border-yellow-200 py-2.5 px-4 marquee-container text-sm font-semibold text-yellow-800">
+            <span class="bg-red-600 text-white text-[11px] font-bold px-2.5 py-1 rounded mr-3 flex-shrink-0 animate-pulse">SỰ KIỆN / THÔNG BÁO</span>
+            <div class="marquee-text w-full">
+                <span id="sloganMarquee" class="mr-8">Tổ 3 lớp 9A3: Học tập theo lời Bác - Sáng bước vững tương lai - Vì một Việt Nam vươn tầm thế giới!</span>
+                <span id="customMarqueeText"></span>
+            </div>
+        </div>
+
+        <!-- Main Body Grid Layout -->
+        <div class="flex-1 flex flex-col lg:flex-row p-6 gap-6">
+            
+            <!-- Left Panel (Main Content Screen) -->
+            <main class="flex-1 bg-white border border-gray-200 rounded-2xl p-6 shadow-sm min-h-[500px]">
+                
+                <!-- TAB: Trang chủ -->
+                <section id="tab-trangchu" class="tab-content block">
+                    <div class="flex justify-between items-center mb-6">
+                        <h2 class="text-2xl font-extrabold text-green-700 flex items-center gap-2">
+                            <i class="fa fa-bullhorn"></i> Bản Tin Chỉ Đạo (Admin)
+                        </h2>
+                        <span class="text-xs text-gray-500 font-bold" id="postCountAdmin">0 bài viết</span>
+                    </div>
+                    <div id="adminPostList" class="space-y-6">
+                        <!-- Admin posts -->
+                    </div>
+                </section>
+
+                <!-- TAB: Giới thiệu -->
+                <section id="tab-gioithieu" class="tab-content hidden">
+                    <h2 class="text-2xl font-extrabold text-green-700 mb-6 flex items-center gap-2">
+                        <i class="fa fa-school"></i> Giới Thiệu Tổ 3 - Lớp 9A3
+                    </h2>
+                    <div class="prose max-w-none text-gray-700 space-y-4 font-medium leading-relaxed">
+                        <div class="bg-green-50 p-6 rounded-xl border border-green-100 mb-6">
+                            <p class="text-green-800 text-lg italic">"Nơi hội tụ tinh hoa, rèn luyện chăm ngoan, tiến bước vững chắc vào tương lai."</p>
+                        </div>
+                        <p>Chào mừng đến với trang giới thiệu chính thức của Tổ 3. Tổ của chúng mình bao gồm các thành viên năng nổ, đoàn kết, luôn sẵn sàng hỗ trợ nhau trong học tập và rèn luyện đạo đức.</p>
+                        <h3 class="text-lg font-bold text-gray-800 mt-4">Ban Điều Hành Tổ 3:</h3>
+                        <ul class="list-disc pl-6 space-y-2">
+                            <li><strong>Tổ trưởng:</strong> Phụ trách điều phối chung, kiểm tra nề nếp thi đua và chuẩn bị bài học.</li>
+                            <li><strong>Tổ phó:</strong> Hỗ trợ đôn đốc các công tác trực nhật, lao động tự quản và học tập.</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <!-- TAB: Sảnh Liên Thông -->
+                <section id="tab-sanh" class="tab-content hidden">
+                    <div class="flex justify-between items-center mb-4">
+                        <h2 class="text-2xl font-extrabold text-blue-700 flex items-center gap-2">
+                            <i class="fa fa-comments"></i> Sảnh Liên Thông
+                        </h2>
+                        <span class="text-xs text-gray-500 font-bold" id="postCountAll">0 bài viết</span>
+                    </div>
+
+                    <!-- Create Post Area -->
+                    <div id="createPostBox" class="bg-gray-50 border border-gray-200 rounded-xl p-4 mb-6">
+                        <div id="postNotLoggedIn" class="text-center py-4 text-gray-500 font-semibold">
+                            Vui lòng <button onclick="openActionModal('login')" class="text-green-600 underline">Đăng nhập</button> hoặc <button onclick="openActionModal('register')" class="text-green-600 underline">Đăng ký</button> để đăng bài viết.
+                        </div>
+                        <div id="postForm" class="hidden">
+                            <div class="flex gap-3 mb-3">
+                                <div id="userPostAvatar" class="w-10 h-10 rounded-full bg-green-600 text-white flex items-center justify-center font-bold text-sm shadow-inner bg-cover bg-center"></div>
+                                <div class="flex-1">
+                                    <textarea id="postTextContent" rows="3" class="w-full border border-gray-300 rounded-lg p-2.5 text-sm focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none" placeholder="Chia sẻ suy nghĩ của bạn với Tổ 3..."></textarea>
+                                </div>
+                            </div>
+                            
+                            <!-- Rich Text Editor Toolbar -->
+                            <div class="flex flex-wrap items-center gap-2 mb-3 bg-white p-2 rounded-lg border border-gray-200">
+                                <button onclick="insertFormat('**', '**')" class="px-2.5 py-1 text-xs font-bold bg-gray-100 hover:bg-gray-200 rounded" title="In đậm">B</button>
+                                <button onclick="insertFormat('*', '*')" class="px-2.5 py-1 text-xs italic bg-gray-100 hover:bg-gray-200 rounded" title="In nghiêng">I</button>
+                                <button onclick="insertColorFormat()" class="px-2.5 py-1 text-xs bg-gray-100 hover:bg-gray-200 rounded text-red-600 font-bold" title="Màu chữ">Màu</button>
+                                <button onclick="insertImagePrompt()" class="px-2.5 py-1 text-xs bg-gray-100 hover:bg-gray-200 rounded" title="Chèn ảnh"><i class="fa fa-image"></i> Ảnh</button>
+                            </div>
+
+                            <div class="flex justify-between items-center">
+                                <div class="text-[11px] text-gray-400 font-semibold">Mẹo: Bạn có thể chọn văn bản rồi click nút định dạng để áp dụng nhanh.</div>
+                                <button onclick="submitNewPost()" class="bg-blue-600 hover:bg-blue-700 text-white font-bold px-5 py-2 rounded-lg text-sm transition-colors shadow-sm flex items-center gap-1.5">
+                                    <i class="fa fa-paper-plane"></i> Đăng bài
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- All Posts Container -->
+                    <div id="allPostList" class="space-y-6">
+                        <!-- Posts go here -->
+                    </div>
+                </section>
+
+                <!-- TAB: Lịch Hoạt Động -->
+                <section id="tab-lichhoatdong" class="tab-content hidden">
+                    <h2 class="text-2xl font-extrabold text-green-700 mb-4 flex items-center gap-2">
+                        <i class="fa fa-calendar-alt"></i> Lịch Hoạt Động Lớp & Trường
+                    </h2>
+                    <p class="text-gray-500 text-xs font-bold mb-6">Nơi ghi chú các lễ hội, dã ngoại, sự kiện phong trào và các hoạt động giáo dục lớn.</p>
+                    <div id="eventList" class="space-y-4">
+                        <div class="border border-gray-100 p-4 rounded-xl bg-gray-50">
+                            <h4 class="font-bold text-gray-800 text-sm">Chào mừng năm học mới 2025 - 2026</h4>
+                            <p class="text-xs text-gray-500 mt-1">Lễ khai giảng và phát động thi đua làm theo 5 điều Bác Hồ dạy.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- TAB: Khen thưởng -->
+                <section id="tab-khenthuong" class="tab-content hidden">
+                    <h2 class="text-2xl font-extrabold text-yellow-600 mb-6 flex items-center gap-2">
+                        <i class="fa fa-trophy"></i> Bảng Vàng Danh Dự Tổ 3
+                    </h2>
+                    
+                    <!-- Podium Display -->
+                    <div class="grid grid-cols-3 gap-4 items-end justify-center mb-8 bg-gradient-to-t from-gray-50 to-white p-6 rounded-2xl border border-gray-100 max-w-xl mx-auto h-64">
+                        <!-- Hạng 2 (Bạc) -->
+                        <div class="flex flex-col items-center">
+                            <div id="rank2Avatar" class="w-14 h-14 rounded-full border-4 border-gray-300 shadow-md flex items-center justify-center bg-gray-200 font-bold text-gray-700 text-sm overflow-hidden bg-cover bg-center">🥈</div>
+                            <span id="rank2Name" class="text-xs font-bold mt-2 truncate max-w-full">Hạng nhì</span>
+                            <div class="bg-gray-300 w-full h-20 rounded-t-lg mt-2 flex items-center justify-center font-black text-gray-600 text-lg shadow-inner">2</div>
+                        </div>
+                        <!-- Hạng 1 (Vàng) -->
+                        <div class="flex flex-col items-center">
+                            <span class="text-yellow-500 text-lg animate-bounce">👑</span>
+                            <div id="rank1Avatar" class="w-18 h-18 rounded-full border-4 border-yellow-400 shadow-lg flex items-center justify-center bg-yellow-100 font-bold text-yellow-800 text-base overflow-hidden -mt-2 bg-cover bg-center">🥇</div>
+                            <span id="rank1Name" class="text-sm font-extrabold mt-2 text-yellow-700 truncate max-w-full">Hạng nhất</span>
+                            <div class="bg-yellow-400 w-full h-28 rounded-t-lg mt-2 flex items-center justify-center font-black text-yellow-800 text-2xl shadow-md">1</div>
+                        </div>
+                        <!-- Hạng 3 (Đồng) -->
+                        <div class="flex flex-col items-center">
+                            <div id="rank3Avatar" class="w-12 h-12 rounded-full border-4 border-amber-600 shadow-md flex items-center justify-center bg-amber-100 font-bold text-amber-950 text-xs overflow-hidden bg-cover bg-center">🥉</div>
+                            <span id="rank3Name" class="text-xs font-bold mt-2 truncate max-w-full">Hạng ba</span>
+                            <div class="bg-amber-600 w-full h-14 rounded-t-lg mt-2 flex items-center justify-center font-black text-amber-200 text-base shadow-inner">3</div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- TAB: Hồ sơ & Thay Đổi Thông Tin -->
+                <section id="tab-hoso" class="tab-content hidden">
+                    <h2 class="text-2xl font-extrabold text-green-700 mb-6 flex items-center gap-2">
+                        <i class="fa fa-user-circle"></i> Hồ Sơ Thành Viên Tổ 3
+                    </h2>
+                    
+                    <div id="profileNotLoggedIn" class="text-center py-12 text-gray-500 font-semibold bg-gray-50 rounded-xl border border-dashed border-gray-300">
+                        <i class="fa fa-lock text-4xl mb-3 text-gray-300"></i>
+                        <p>Vui lòng đăng nhập hoặc đăng ký tài khoản mới để xem hồ sơ cá nhân và quản lý thông tin của bạn.</p>
+                        <div class="mt-4 flex justify-center gap-3">
+                            <button onclick="openActionModal('login')" class="bg-green-600 hover:bg-green-700 text-white font-bold px-6 py-2 rounded-lg text-sm shadow">Đăng nhập</button>
+                            <button onclick="openActionModal('register')" class="bg-white border border-gray-300 text-gray-700 hover:bg-gray-50 font-bold px-6 py-2 rounded-lg text-sm shadow-sm">Đăng ký</button>
+                        </div>
+                    </div>
+
+                    <div id="profileDetails" class="hidden space-y-6">
+                        <div class="flex flex-col sm:flex-row gap-6 items-center bg-green-50 p-6 rounded-2xl border border-green-100">
+                            <!-- Avatar Viewer with direct edit trigger -->
+                            <div class="relative group cursor-pointer" onclick="triggerAvatarUpload()">
+                                <div id="profileAvatar" class="w-24 h-24 rounded-full border-4 border-green-200 flex items-center justify-center font-black text-3xl text-white bg-green-600 shadow-md overflow-hidden bg-cover bg-center"></div>
+                                <div class="absolute inset-0 bg-black/40 rounded-full opacity-0 group-hover:opacity-100 flex items-center justify-center transition-all">
+                                    <i class="fa fa-camera text-white text-lg"></i>
+                                </div>
+                            </div>
+                            <div class="flex-1 text-center sm:text-left">
+                                <h3 id="profileFullName" class="text-2xl font-black text-green-800">Họ và Tên</h3>
+                                <p class="text-xs font-bold text-red-500 uppercase mt-1">Vai Trò: <span id="profileRole">Thành viên</span></p>
+                                <div class="mt-2 flex flex-wrap justify-center sm:justify-start gap-3 text-xs font-semibold text-gray-600">
+                                    <span>Tổ: <span id="profileGroup">3</span></span>
+                                    <span>•</span>
+                                    <span>Lớp: <span id="profileClass">9A3</span></span>
+                                    <span>•</span>
+                                    <span>Năm sinh: <span id="profileBirthYear">N/A</span></span>
+                                </div>
+                            </div>
+                            <button onclick="logout()" class="bg-red-500 hover:bg-red-600 text-white font-bold px-5 py-2.5 rounded-lg text-xs flex items-center gap-1.5 shadow">
+                                <i class="fa fa-sign-out-alt"></i> Đăng xuất
+                            </button>
+                        </div>
+
+                        <!-- Modify Profile Section -->
+                        <div class="border border-gray-200 rounded-2xl p-6 bg-white">
+                            <h4 class="font-extrabold text-lg text-gray-800 mb-4 border-b pb-2 flex justify-between items-center">
+                                <span>Cập Nhật Thông Tin Tài Khoản</span>
+                                <span class="text-xs text-red-500 font-bold">Mỗi người 2 tuần được đổi 1 lần</span>
+                            </h4>
+                            <form id="editProfileForm" onsubmit="handleEditProfile(event)" class="space-y-4">
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                    <div>
+                                        <label class="block text-xs font-bold text-gray-600 uppercase mb-1">Họ và Tên</label>
+                                        <input type="text" id="editName" class="w-full border border-gray-300 rounded-lg p-2.5 text-sm focus:ring-2 focus:ring-green-500 outline-none" required>
+                                    </div>
+                                    <div>
+                                        <label class="block text-xs font-bold text-gray-600 uppercase mb-1">Năm sinh</label>
+                                        <select id="editBirthYear" class="w-full border border-gray-300 rounded-lg p-2.5 text-sm focus:ring-2 focus:ring-green-500 outline-none" required></select>
+                                    </div>
+                                    <div>
+                                        <label class="block text-xs font-bold text-gray-600 uppercase mb-1">Trường</label>
+                                        <input type="text" id="editSchool" class="w-full border border-gray-300 rounded-lg p-2.5 text-sm focus:ring-2 focus:ring-green-500 outline-none" required>
+                                    </div>
+                                    <div>
+                                        <label class="block text-xs font-bold text-gray-600 uppercase mb-1">Lớp</label>
+                                        <input type="text" id="editClass" class="w-full border border-gray-300 rounded-lg p-2.5 text-sm focus:ring-2 focus:ring-green-500 outline-none" required>
+                                    </div>
+                                    <div>
+                                        <label class="block text-xs font-bold text-gray-600 uppercase mb-1">Tổ</label>
+                                        <input type="number" id="editGroup" class="w-full border border-gray-300 rounded-lg p-2.5 text-sm focus:ring-2 focus:ring-green-500 outline-none" required>
+                                    </div>
+                                    <div>
+                                        <label class="block text-xs font-bold text-gray-600 uppercase mb-1">Đường dẫn ảnh đại diện (Tùy chọn)</label>
+                                        <input type="text" id="editAvatarUrl" class="w-full border border-gray-300 rounded-lg p-2.5 text-sm focus:ring-2 focus:ring-green-500 outline-none" placeholder="https://link_anh.png">
+                                    </div>
+                                    <div class="relative">
+                                        <label class="block text-xs font-bold text-gray-600 uppercase mb-1">Mật khẩu mới</label>
+                                        <input type="password" id="editPassword" class="w-full border border-gray-300 rounded-lg p-2.5 pr-10 text-sm focus:ring-2 focus:ring-green-500 outline-none" placeholder="Bỏ trống nếu không muốn đổi">
+                                        <button type="button" onclick="togglePasswordVisibility('editPassword', this)" class="absolute right-3 bottom-3 text-gray-400 hover:text-gray-600">
+                                            <i class="fa fa-eye"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                                
+                                <div class="bg-gray-50 p-4 rounded-xl border border-gray-100 flex items-center gap-3">
+                                    <input type="file" id="editAvatarFile" accept="image/*" class="hidden" onchange="previewFileAvatar(event)">
+                                    <button type="button" onclick="document.getElementById('editAvatarFile').click()" class="bg-white border border-gray-300 text-gray-700 hover:bg-gray-50 font-bold px-4 py-2 rounded-lg text-xs shadow-sm flex items-center gap-1.5">
+                                        <i class="fa fa-upload"></i> Tải ảnh lên từ điện thoại / máy tính
+                                    </button>
+                                    <span id="editAvatarFileLabel" class="text-xs text-gray-400">Chưa chọn tệp ảnh</span>
+                                </div>
+
+                                <div class="flex justify-end pt-2">
+                                    <button type="button" onclick="openConfirmModal('Xác nhận thay đổi', 'Bạn có chắc chắn muốn cập nhật toàn bộ thông tin tài khoản cá nhân của bạn không?', applyProfileChanges)" class="bg-green-600 hover:bg-green-700 text-white font-bold px-6 py-2.5 rounded-lg text-sm transition-colors shadow">
+                                        Xác nhận thay đổi
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </section>
+            </main>
+
+            <!-- Right Panel (Widgets & Info Boards) -->
+            <aside class="w-full lg:w-80 flex flex-col gap-6">
+                
+                <!-- Quick Search Widget -->
+                <div class="bg-white border border-gray-200 p-4 rounded-2xl shadow-sm">
+                    <label class="block text-xs font-black text-gray-500 uppercase mb-2">Tìm Kiếm Nhanh</label>
+                    <div class="flex gap-2">
+                        <input type="text" id="quickSearchInput" class="w-full border border-gray-300 rounded-xl px-3 py-2 text-sm focus:ring-2 focus:ring-green-500 outline-none" placeholder="Nhập từ khóa...">
+                        <button onclick="triggerQuickSearch()" class="bg-green-600 hover:bg-green-700 text-white px-4 rounded-xl text-sm font-bold transition-all"><i class="fa fa-search"></i></button>
+                    </div>
+                </div>
+
+                <!-- Excel-like Duty and Cleaning Grid Widget -->
+                <div class="bg-white border border-gray-200 p-4 rounded-2xl shadow-sm overflow-hidden">
+                    <h3 class="font-extrabold text-sm text-green-700 uppercase mb-3 flex justify-between items-center">
+                        <span><i class="fa fa-broom"></i> Lịch Trực & Công Tác Tuần</span>
+                        <button onclick="openDutyEditor()" id="editDutyBtn" class="hidden text-xs text-green-600 underline font-semibold">Chỉnh sửa</button>
+                    </h3>
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-xs text-left border-collapse border border-gray-200 rounded-lg overflow-hidden" id="dutyTable">
+                            <thead class="bg-green-50 text-green-800 font-extrabold border-b border-gray-200">
+                                <tr>
+                                    <th class="p-2 border border-gray-200">Thứ</th>
+                                    <th class="p-2 border border-gray-200">Trực Nhật</th>
+                                    <th class="p-2 border border-gray-200">Vệ Sinh</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-gray-200 font-medium text-gray-700" id="dutyTableBody">
+                                <!-- Filled by JS based on Excel Grid database -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Web Version Information -->
+                <div class="bg-gradient-to-br from-green-50 to-green-100 border border-green-200 p-4 rounded-2xl shadow-sm text-center">
+                    <p class="text-green-800 font-extrabold text-sm"><i class="fa fa-users"></i> ĐOÀN KẾT LÀ SỨC MẠNH</p>
+                    <p class="text-[11px] text-green-600 mt-1 font-semibold">Mọi thành viên hãy nỗ lực hết mình vì màu cờ sắc áo Tổ 3!</p>
+                </div>
+            </aside>
+        </div>
+
+        <!-- Footer -->
+        <footer class="bg-gray-100 border-t border-gray-200 text-center py-4 px-6 text-xs font-semibold text-gray-500">
+            © 2026 Bản quyền thuộc về Tổ 3 - Lớp 9A3. All rights reserved.
+        </footer>
+    </div>
+
+    <!-- FLOATING COMPONENT CODES (Auth Modals, Toast Notification and Setting Drawers) -->
+
+    <!-- Draggable Floating Action Widgets (Gear, Music, Custom Buttons) -->
+    <div class="fixed bottom-6 left-6 z-40 flex flex-col gap-3">
+        
+        <!-- Quick Play Music floating box -->
+        <div id="musicFloatingBox" class="bg-white border border-gray-200 p-3 rounded-2xl shadow-xl flex items-center gap-2 max-w-xs transition-all duration-300 transform translate-x-[-120%] opacity-0">
+            <button onclick="toggleMusicPlay()" class="w-8 h-8 rounded-full bg-green-500 text-white flex items-center justify-center shadow"><i id="musicPlayIcon" class="fa fa-play"></i></button>
+            <div class="text-xs">
+                <p class="font-bold text-gray-800">Nhạc Tổ 3 Lớp 9A3</p>
+                <marquee class="text-[10px] text-gray-500 font-semibold" id="musicTrackName" scrollamount="2">Mặc định: Tắt nhạc. Admin có thể thay đổi danh sách phát trong Cài đặt.</marquee>
+            </div>
+            <!-- Hidden YouTube Iframe -->
+            <div id="youtubePlayerContainer" class="hidden"></div>
+        </div>
+
+        <div class="flex gap-2 items-center">
+            <!-- Gear Main Menu Toggle -->
+            <button onclick="toggleSettingsDrawer()" class="w-14 h-14 rounded-full bg-green-600 hover:bg-green-700 hover:rotate-45 text-white flex items-center justify-center shadow-2xl transition-all duration-300 text-xl border-2 border-white">
+                <i class="fa fa-cog"></i>
+            </button>
+            <!-- Toggle Music Widget -->
+            <button onclick="toggleMusicWidget()" class="w-11 h-11 rounded-full bg-blue-500 hover:bg-blue-600 text-white flex items-center justify-center shadow-lg transition-all text-sm border border-white">
+                <i class="fa fa-music"></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- COLLAPSIBLE SETTING DRAWER -->
+    <div id="settingsDrawer" class="fixed bottom-24 left-6 z-50 bg-white border border-gray-200 rounded-2xl shadow-2xl w-80 max-h-[500px] overflow-hidden flex flex-col transition-all duration-300 transform scale-0 origin-bottom-left">
+        <!-- Header -->
+        <div class="bg-green-600 text-white px-4 py-3 flex justify-between items-center font-bold text-sm">
+            <span><i class="fa fa-sliders-h"></i> Bảng Tiện Ích & Cài Đặt</span>
+            <button onclick="toggleSettingsDrawer()" class="text-white hover:text-gray-200 text-lg">&times;</button>
+        </div>
+        
+        <!-- Drawer Tabs -->
+        <div class="flex bg-gray-100 text-[11px] font-bold border-b border-gray-200">
+            <button id="drawerTabBtn-main" onclick="switchDrawerTab('main')" class="flex-1 py-2 text-center bg-white border-r text-green-700">Chức Năng</button>
+            <button id="drawerTabBtn-admin" onclick="switchDrawerTab('admin')" class="flex-1 py-2 text-center text-gray-500 hover:bg-gray-50">Cài Đặt Admin</button>
+        </div>
+
+        <!-- Drawer Content Container -->
+        <div class="flex-1 overflow-y-auto p-4 space-y-4">
+            
+            <!-- DRAWER TAB: Main functions -->
+            <div id="drawerTab-main" class="space-y-2 block">
+                <button onclick="openActionModal('register')" class="w-full text-left bg-gray-50 hover:bg-gray-100 border border-gray-200 rounded-xl p-3 text-xs font-bold flex items-center justify-between text-gray-700">
+                    <span>(1) Đăng ký tài khoản</span> <i class="fa fa-user-plus text-green-600"></i>
+                </button>
+                <button onclick="openActionModal('login')" class="w-full text-left bg-gray-50 hover:bg-gray-100 border border-gray-200 rounded-xl p-3 text-xs font-bold flex items-center justify-between text-gray-700">
+                    <span>(2) Đăng nhập</span> <i class="fa fa-sign-in-alt text-blue-600"></i>
+                </button>
+                <button onclick="reloadPage()" class="w-full text-left bg-gray-50 hover:bg-gray-100 border border-gray-200 rounded-xl p-3 text-xs font-bold flex items-center justify-between text-gray-700">
+                    <span>(3) Tải lại trang (F5)</span> <i class="fa fa-sync-alt text-yellow-500"></i>
+                </button>
+                <button onclick="switchTab('hoso')" class="w-full text-left bg-gray-50 hover:bg-gray-100 border border-gray-200 rounded-xl p-3 text-xs font-bold flex items-center justify-between text-gray-700">
+                    <span>(4) Sửa đổi tài khoản & Hồ sơ</span> <i class="fa fa-user-edit text-orange-500"></i>
+                </button>
+                <div class="bg-gray-50 border border-gray-200 rounded-xl p-3 text-xs font-bold text-gray-700">
+                    <div class="flex justify-between items-center mb-2">
+                        <span>(5) Thu phóng trang web</span>
+                        <span id="zoomDisplay" class="text-green-700">100%</span>
+                    </div>
+                    <div class="flex gap-2">
+                        <button onclick="adjustZoom(-10)" class="flex-1 bg-white border rounded py-1 hover:bg-gray-100">- Co</button>
+                        <button onclick="adjustZoom(10)" class="flex-1 bg-white border rounded py-1 hover:bg-gray-100">+ Giãn</button>
+                    </div>
+                </div>
+                <button onclick="triggerSearchFocus()" class="w-full text-left bg-gray-50 hover:bg-gray-100 border border-gray-200 rounded-xl p-3 text-xs font-bold flex items-center justify-between text-gray-700">
+                    <span>(6) Tìm kiếm thông tin</span> <i class="fa fa-search text-teal-600"></i>
+                </button>
+                <button onclick="switchTab('sanh')" class="w-full text-left bg-gray-50 hover:bg-gray-100 border border-gray-200 rounded-xl p-3 text-xs font-bold flex items-center justify-between text-gray-700">
+                    <span>(7) Đăng bài viết</span> <i class="fa fa-edit text-indigo-600"></i>
+                </button>
+            </div>
+
+            <!-- DRAWER TAB: Admin panel -->
+            <div id="drawerTab-admin" class="space-y-4 hidden">
+                <div id="drawerAdminRestricted" class="text-center py-6 text-gray-400 font-bold text-xs">
+                    <i class="fa fa-lock text-3xl mb-2 text-gray-300"></i>
+                    <p>Mục này chỉ dành cho tài khoản Admin</p>
+                </div>
+                <div id="drawerAdminContent" class="hidden space-y-4">
+                    
+                    <!-- Admin Slogan & Special Slide Config -->
+                    <div class="space-y-2 border-b pb-3">
+                        <h4 class="font-extrabold text-xs text-green-700 uppercase">1. Thông báo chạy & Slide 3</h4>
+                        <textarea id="adminMarqueeInput" rows="2" class="w-full border p-1.5 text-xs rounded outline-none" placeholder="Nhập thông báo chạy sau Slogan..."></textarea>
+                        <textarea id="adminSlide3Input" rows="2" class="w-full border p-1.5 text-xs rounded outline-none" placeholder="Nhập văn bản hiển thị cho Slide 3..."></textarea>
+                        <button onclick="saveAdminTexts()" class="w-full bg-green-600 hover:bg-green-700 text-white font-bold py-1.5 rounded text-xs">Cập nhật tin tức</button>
+                    </div>
+
+                    <!-- Custom Header Banner BG & Logo Image -->
+                    <div class="space-y-2 border-b pb-3">
+                        <h4 class="font-extrabold text-xs text-green-700 uppercase">2. Tùy biến Header & Banner</h4>
+                        <input type="text" id="adminHeaderBgInput" class="w-full border p-1.5 text-xs rounded outline-none" placeholder="Link ảnh nền Header (URL)">
+                        <input type="text" id="adminLogoInput" class="w-full border p-1.5 text-xs rounded outline-none" placeholder="Nội dung chữ Logo (Ví dụ: TỔ 3 - 9A3)">
+                        <div class="grid grid-cols-2 gap-1 text-[10px]">
+                            <label>Chiều cao Header (px): <input type="number" id="adminHeaderHeight" class="w-full border p-1" value="180"></label>
+                            <label>Tỷ lệ ảnh nền (%): <input type="number" id="adminBgScale" class="w-full border p-1" value="100"></label>
+                        </div>
+                        <button onclick="saveAdminHeaderSettings()" class="w-full bg-green-600 hover:bg-green-700 text-white font-bold py-1.5 rounded text-xs">Lưu cài đặt Header</button>
+                    </div>
+
+                    <!-- YouTube Playlist Link Config -->
+                    <div class="space-y-2 border-b pb-3">
+                        <h4 class="font-extrabold text-xs text-green-700 uppercase">3. Nhạc Nền Tổ 3 (YouTube Playlist ID)</h4>
+                        <input type="text" id="adminYoutubePlaylistId" class="w-full border p-1.5 text-xs rounded outline-none" placeholder="Nhập YouTube Playlist ID hoặc Video ID">
+                        <button onclick="saveAdminMusic()" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-1.5 rounded text-xs">Đổi danh sách phát</button>
+                    </div>
+
+                    <!-- Navigation Link & Button Customizer -->
+                    <div class="space-y-2 border-b pb-3">
+                        <h4 class="font-extrabold text-xs text-green-700 uppercase">4. Tùy biến nút & Liên kết</h4>
+                        <div class="space-y-1">
+                            <label class="block text-[10px] text-gray-500">Chữ trên nút Sổ Thi Đua:</label>
+                            <input type="text" id="adminSothiduaLabel" class="w-full border p-1 text-xs rounded outline-none" value="Sổ Thi Đua">
+                            <label class="block text-[10px] text-gray-500">Liên kết Sổ Thi Đua (Google Sites):</label>
+                            <input type="text" id="adminSothiduaUrl" class="w-full border p-1.5 text-xs rounded outline-none" placeholder="https://sites.google.com/...">
+                        </div>
+                        <button onclick="saveAdminLinks()" class="w-full bg-green-600 hover:bg-green-700 text-white font-bold py-1.5 rounded text-xs">Cập nhật liên kết</button>
+                    </div>
+
+                    <!-- Special Event Controls (e.g. National Mourning) -->
+                    <div class="space-y-2 border-b pb-3">
+                        <h4 class="font-extrabold text-xs text-green-700 uppercase">5. Chế độ sự kiện đặc biệt</h4>
+                        <select id="adminSpecialEventSelect" class="w-full border p-1.5 text-xs rounded outline-none">
+                            <option value="none">Bình thường</option>
+                            <option value="mourning">Quốc tang (Đen Trắng)</option>
+                            <option value="celebrate">Lễ kỷ niệm (Việt Nam)</option>
+                        </select>
+                        <button onclick="saveSpecialEvent()" class="w-full bg-red-600 hover:bg-red-700 text-white font-bold py-1.5 rounded text-xs">Áp dụng sự kiện</button>
+                    </div>
+
+                    <!-- God of Admin Code Editor -->
+                    <div class="space-y-2 border-b pb-3">
+                        <h4 class="font-extrabold text-xs text-red-600 uppercase flex items-center justify-between">
+                            <span>6. GOD OF ADMIN CODE EDITOR</span>
+                            <i class="fa fa-code"></i>
+                        </h4>
+                        <p class="text-[10px] text-gray-500 font-semibold">Chỉnh sửa trực tiếp mã nguồn web. Mã gốc luôn được lưu trữ an toàn.</p>
+                        <button onclick="openGodOfAdminModal()" class="w-full bg-black hover:bg-gray-900 text-white font-bold py-2 rounded text-xs flex items-center justify-center gap-1.5">
+                            <i class="fa fa-terminal"></i> Mở Trình Biên Soạn Code
+                        </button>
+                    </div>
+
+                    <!-- Google App Script Sync Settings -->
+                    <div class="space-y-2">
+                        <h4 class="font-extrabold text-xs text-green-700 uppercase">7. Kết nối Google Sheets</h4>
+                        <input type="text" id="adminGoogleScriptUrl" class="w-full border p-1.5 text-xs rounded outline-none" placeholder="URL Web App Google Apps Script">
+                        <button onclick="saveGoogleScriptUrl()" class="w-full bg-green-700 hover:bg-green-800 text-white font-bold py-1.5 rounded text-xs mb-1">Lưu URL kết nối</button>
+                        <button onclick="syncAllLocalUsersToSheets()" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-1.5 rounded text-xs flex items-center justify-center gap-1.5 shadow-sm">
+                            <i class="fa fa-sync"></i> Đồng bộ tài khoản cũ lên Sheet
+                        </button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- CORE ACTION MODALS -->
+
+    <div id="actionModal" class="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 flex items-center justify-center p-4 hidden">
+        <div class="bg-white rounded-2xl shadow-2xl w-full max-w-md overflow-hidden relative">
+            <button onclick="closeActionModal()" class="absolute right-4 top-4 text-gray-400 hover:text-gray-600 text-2xl font-bold">&times;</button>
+            
+            <!-- Modal Body: Register -->
+            <div id="modal-register" class="p-6 space-y-4 hidden">
+                <h3 class="text-xl font-extrabold text-green-700">Đăng Ký Tài Khoản</h3>
+                <form onsubmit="handleRegister(event)" class="space-y-3">
+                    <div>
+                        <label class="block text-xs font-bold text-gray-600 uppercase mb-1">Họ và Tên</label>
+                        <input type="text" id="regName" class="w-full border rounded-lg p-2.5 text-sm outline-none focus:ring-2 focus:ring-green-500" required>
+                    </div>
+                    <div class="grid grid-cols-2 gap-2">
+                        <div>
+                            <label class="block text-xs font-bold text-gray-600 uppercase mb-1">Năm sinh</label>
+                            <select id="regBirthYear" class="w-full border rounded-lg p-2.5 text-sm outline-none focus:ring-2 focus:ring-green-500" required>
+                                <!-- JS Populated -->
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-gray-600 uppercase mb-1">Lớp</label>
+                            <input type="text" id="regClass" class="w-full border rounded-lg p-2.5 text-sm outline-none focus:ring-2 focus:ring-green-500" value="9A3" required>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-2 gap-2">
+                        <div>
+                            <label class="block text-xs font-bold text-gray-600 uppercase mb-1">Trường</label>
+                            <input type="text" id="regSchool" class="w-full border rounded-lg p-2.5 text-sm outline-none focus:ring-2 focus:ring-green-500" required>
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-gray-600 uppercase mb-1">Tổ</label>
+                            <input type="number" id="regGroup" class="w-full border rounded-lg p-2.5 text-sm outline-none focus:ring-2 focus:ring-green-500" value="3" required>
+                        </div>
+                    </div>
+                    <div class="relative">
+                        <label class="block text-xs font-bold text-gray-600 uppercase mb-1">Mật khẩu</label>
+                        <input type="password" id="regPassword" class="w-full border rounded-lg p-2.5 pr-10 text-sm outline-none focus:ring-2 focus:ring-green-500" required>
+                        <button type="button" onclick="togglePasswordVisibility('regPassword', this)" class="absolute right-3 bottom-3 text-gray-400 hover:text-gray-600">
+                            <i class="fa fa-eye"></i>
+                        </button>
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold text-gray-600 uppercase mb-1">Mật mã Admin đặc biệt (nếu có)</label>
+                        <input type="password" id="regAdminId" class="w-full border rounded-lg p-2.5 text-sm outline-none focus:ring-2 focus:ring-green-500" placeholder="Bỏ trống nếu là thành viên thường">
+                    </div>
+                    <button type="submit" class="w-full bg-green-600 hover:bg-green-700 text-white font-bold py-2.5 rounded-lg text-sm transition-colors shadow">Đăng ký và Đăng nhập</button>
+                </form>
+            </div>
+
+            <!-- Modal Body: Login -->
+            <div id="modal-login" class="p-6 space-y-4 hidden">
+                <h3 class="text-xl font-extrabold text-green-700">Đăng Nhập Hệ Thống</h3>
+                <form onsubmit="handleLogin(event)" class="space-y-4">
+                    <div>
+                        <label class="block text-xs font-bold text-gray-600 uppercase mb-1">Họ và Tên</label>
+                        <input type="text" id="loginName" class="w-full border rounded-lg p-2.5 text-sm outline-none focus:ring-2 focus:ring-green-500" required>
+                    </div>
+                    <div class="relative">
+                        <div class="flex justify-between items-center mb-1">
+                            <label class="block text-xs font-bold text-gray-600 uppercase">Mật khẩu</label>
+                            <button type="button" onclick="openActionModal('recovery')" class="text-xs text-green-600 hover:underline">Quên MK?</button>
+                        </div>
+                        <input type="password" id="loginPassword" class="w-full border rounded-lg p-2.5 pr-10 text-sm outline-none focus:ring-2 focus:ring-green-500" required>
+                        <button type="button" onclick="togglePasswordVisibility('loginPassword', this)" class="absolute right-3 bottom-3 text-gray-400 hover:text-gray-600">
+                            <i class="fa fa-eye"></i>
+                        </button>
+                    </div>
+                    <button type="submit" class="w-full bg-green-600 hover:bg-green-700 text-white font-bold py-2.5 rounded-lg text-sm transition-colors shadow">Đăng nhập</button>
+                </form>
+            </div>
+
+            <!-- Modal Body: Password Recovery -->
+            <div id="modal-recovery" class="p-6 space-y-4 hidden">
+                <h3 class="text-xl font-extrabold text-green-700">Khôi Phục Mật Khẩu</h3>
+                <p class="text-xs text-gray-500 font-semibold leading-relaxed">Để khôi phục, vui lòng nhập chính xác các thông tin đã đăng ký dưới đây để đặt mật khẩu mới.</p>
+                <form onsubmit="handleRecovery(event)" class="space-y-3">
+                    <div>
+                        <label class="block text-xs font-bold text-gray-600 uppercase mb-1">Họ và Tên</label>
+                        <input type="text" id="recName" class="w-full border rounded-lg p-2.5 text-sm outline-none focus:ring-2 focus:ring-green-500" required>
+                    </div>
+                    <div class="grid grid-cols-2 gap-2">
+                        <div>
+                            <label class="block text-xs font-bold text-gray-600 uppercase mb-1">Năm sinh</label>
+                            <select id="recBirthYear" class="w-full border rounded-lg p-2.5 text-sm outline-none focus:ring-2 focus:ring-green-500" required></select>
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-gray-600 uppercase mb-1">Lớp</label>
+                            <input type="text" id="recClass" class="w-full border rounded-lg p-2.5 text-sm outline-none focus:ring-2 focus:ring-green-500" required>
+                        </div>
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold text-gray-600 uppercase mb-1">Trường</label>
+                        <input type="text" id="recSchool" class="w-full border rounded-lg p-2.5 text-sm outline-none focus:ring-2 focus:ring-green-500" required>
+                    </div>
+                    <div class="relative">
+                        <label class="block text-xs font-bold text-gray-600 uppercase mb-1">Mật khẩu mới</label>
+                        <input type="password" id="recNewPassword" class="w-full border rounded-lg p-2.5 pr-10 text-sm outline-none focus:ring-2 focus:ring-green-500" required>
+                        <button type="button" onclick="togglePasswordVisibility('recNewPassword', this)" class="absolute right-3 bottom-3 text-gray-400 hover:text-gray-600">
+                            <i class="fa fa-eye"></i>
+                        </button>
+                    </div>
+                    <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-2.5 rounded-lg text-sm transition-colors shadow">Đổi mật khẩu mới</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- GOD OF ADMIN CODE EDITOR MODAL -->
+    <div id="godOfAdminModal" class="fixed inset-0 bg-black/80 z-50 flex items-center justify-center p-4 hidden">
+        <div class="bg-gray-900 rounded-2xl shadow-2xl w-full max-w-4xl h-[90vh] overflow-hidden flex flex-col">
+            <div class="bg-gray-800 px-6 py-4 flex justify-between items-center border-b border-gray-700">
+                <div class="flex items-center gap-2 text-white">
+                    <i class="fa fa-terminal text-red-500"></i>
+                    <span class="font-extrabold text-sm uppercase">Trình Biên Soạn Quyền Năng - GOD OF ADMIN</span>
+                </div>
+                <button onclick="closeGodOfAdminModal()" class="text-gray-400 hover:text-white text-2xl font-bold">&times;</button>
+            </div>
+            <div class="flex-1 p-4 bg-gray-950 flex flex-col gap-2">
+                <textarea id="godCodeTextArea" class="flex-1 w-full bg-gray-900 text-green-400 font-mono text-xs p-3 rounded border border-gray-700 outline-none focus:ring-1 focus:ring-green-500 resize-none" placeholder="Nhập mã nguồn HTML/JS/CSS mới vào đây..."></textarea>
+                <div class="flex flex-wrap justify-between items-center gap-2 pt-2">
+                    <button type="button" onclick="openConfirmModal('Khôi phục mã nguồn', 'Bạn có chắc chắn muốn khôi phục lại mã nguồn ban đầu không?', restoreFactoryCode)" class="bg-red-600 hover:bg-red-700 text-white font-bold px-4 py-2 rounded text-xs">
+                        <i class="fa fa-history"></i> Khôi phục mã gốc ban đầu
+                    </button>
+                    <div class="flex gap-2">
+                        <button onclick="closeGodOfAdminModal()" class="bg-gray-700 hover:bg-gray-600 text-white font-bold px-4 py-2 rounded text-xs">Hủy bỏ</button>
+                        <button onclick="saveGodCode()" class="bg-green-600 hover:bg-green-700 text-white font-bold px-6 py-2 rounded text-xs shadow-md">
+                            <i class="fa fa-save"></i> Áp dụng Code Mới
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- EXCEL-LIKE WEEKLY DUTY GRID EDITOR MODAL -->
+    <div id="dutyEditorModal" class="fixed inset-0 bg-black/60 z-50 flex items-center justify-center p-4 hidden">
+        <div class="bg-white rounded-2xl shadow-2xl w-full max-w-2xl overflow-hidden">
+            <div class="bg-green-600 text-white px-6 py-4 flex justify-between items-center font-bold">
+                <span><i class="fa fa-edit"></i> Chỉnh Sửa Excel Grid - Lịch Trực & Công Tác</span>
+                <button onclick="closeDutyEditor()" class="text-white text-2xl font-bold">&times;</button>
+            </div>
+            <div class="p-6 space-y-4">
+                <div class="overflow-x-auto">
+                    <table class="w-full text-xs text-left border-collapse border border-gray-200">
+                        <thead class="bg-gray-100">
+                            <tr>
+                                <th class="p-2 border">Thứ</th>
+                                <th class="p-2 border">Trực Nhật</th>
+                                <th class="p-2 border">Vệ Sinh</th>
+                            </tr>
+                        </thead>
+                        <tbody id="dutyEditorTableBody">
+                            <!-- Populated with editable inputs -->
+                        </tbody>
+                    </table>
+                </div>
+                <div class="flex justify-end gap-2 pt-2">
+                    <button onclick="closeDutyEditor()" class="bg-gray-200 hover:bg-gray-300 text-gray-700 font-bold px-4 py-2 rounded-lg text-xs">Hủy</button>
+                    <button onclick="saveDutyGrid()" class="bg-green-600 hover:bg-green-700 text-white font-bold px-6 py-2 rounded-lg text-xs shadow">Xác nhận thay đổi</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- CUSTOM CONFIRMATION MODAL (Thay thế cho lệnh confirm() nguyên bản của trình duyệt) -->
+    <div id="customConfirmModal" class="fixed inset-0 bg-black/70 backdrop-blur-sm z-[999] flex items-center justify-center p-4 hidden">
+        <div class="bg-white rounded-2xl shadow-2xl w-full max-w-sm overflow-hidden transform scale-95 transition-all">
+            <div class="bg-red-600 text-white p-4 font-bold text-sm flex items-center gap-2">
+                <i class="fa fa-exclamation-triangle"></i>
+                <span id="confirmModalTitle">Xác nhận hành động</span>
+            </div>
+            <div class="p-5 text-sm text-gray-600 font-medium leading-relaxed" id="confirmModalText">
+                Bạn có chắc chắn muốn thực hiện hành động nguy hiểm này không?
+            </div>
+            <div class="p-4 bg-gray-50 flex justify-end gap-2.5">
+                <button onclick="closeConfirmModal()" class="bg-gray-200 hover:bg-gray-300 text-gray-700 font-bold px-4 py-2 rounded-lg text-xs">Hủy bỏ</button>
+                <button id="confirmModalSuccessBtn" class="bg-red-600 hover:bg-red-700 text-white font-bold px-5 py-2 rounded-lg text-xs shadow-sm">Xác nhận</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Custom In-Page Notification -->
+    <div id="customToast" class="fixed top-6 right-6 z-50 bg-gray-900/95 backdrop-blur-md text-white px-5 py-3 rounded-xl shadow-2xl max-w-sm flex items-center gap-3 transition-all duration-300 transform translate-x-[150%]">
+        <div id="toastIcon" class="text-lg"></div>
+        <div class="text-xs font-semibold" id="toastMessage">Thông báo mới từ hệ thống!</div>
+    </div>
+
+    <!-- MAIN INTERACTIVE LOGIC SCRIPT -->
+    <script>
+        let state = {
+            users: JSON.parse(localStorage.getItem('t3_users')) || [],
+            currentUser: JSON.parse(localStorage.getItem('t3_curr_user')) || null,
+            posts: JSON.parse(localStorage.getItem('t3_posts')) || [],
+            adminTexts: JSON.parse(localStorage.getItem('t3_admin_texts')) || {
+                marquee: '',
+                slide3: 'Chào mừng các bạn đến với trang chính thức của Tổ 3! Hãy cùng nhau phấn đấu dẫn đầu thi đua tuần này nhé!'
+            },
+            headerConfig: JSON.parse(localStorage.getItem('t3_header_config')) || {
+                bgUrl: '',
+                logoText: 'HỘI ĐỒNG TỔ 3 - LỚP 9A3',
+                height: 180,
+                scale: 100
+            },
+            adminLinks: JSON.parse(localStorage.getItem('t3_admin_links')) || {
+                sothiduaLabel: 'Sổ Thi Đua',
+                sothiduaUrl: 'https://sites.google.com'
+            },
+            dutyGrid: JSON.parse(localStorage.getItem('t3_duty_grid')) || [
+                { day: 'Thứ 2', clean: 'An, Bình', duty: 'Quét phòng' },
+                { day: 'Thứ 3', clean: 'Cường, Dung', duty: 'Lau bảng' },
+                { day: 'Thứ 4', clean: 'Giang, Hải', duty: 'Sắp bàn ghế' },
+                { day: 'Thứ 5', clean: 'Khánh, Lâm', duty: 'Trực hành lang' },
+                { day: 'Thứ 6', clean: 'Minh, Nam', duty: 'Đổ rác' },
+                { day: 'Thứ 7', clean: 'Tổ trưởng kiểm tra', duty: 'Tổng vệ sinh' }
+            ],
+            youtubePlaylist: localStorage.getItem('t3_yt_playlist') || 'PLUv5pX_r-NToR4fW16R6HjR0o4jYw40vN', 
+            specialEvent: localStorage.getItem('t3_special_event') || 'none', 
+            googleScriptUrl: localStorage.getItem('t3_gs_url') || '',
+            slideIndex: 0,
+            zoomLevel: 100,
+            activeTab: 'trangchu',
+            activeDrawerTab: 'main'
+        };
+
+        const CURRENT_YEAR = 2026;
+        const FAKE_LOGIN_ATTEMPTS_KEY = 't3_login_attempts_';
+        let pendingModalCallback = null;
+
+        function showToast(message, type = 'info') {
+            const toast = document.getElementById('customToast');
+            const icon = document.getElementById('toastIcon');
+            const msg = document.getElementById('toastMessage');
+
+            if (!toast || !icon || !msg) return;
+
+            msg.textContent = message;
+            if (type === 'success') {
+                icon.innerHTML = '🥇';
+                toast.className = 'fixed top-6 right-6 z-50 bg-green-600 text-white px-5 py-3 rounded-xl shadow-2xl max-w-sm flex items-center gap-3 transition-all duration-300';
+            } else if (type === 'error') {
+                icon.innerHTML = '⚠️';
+                toast.className = 'fixed top-6 right-6 z-50 bg-red-600 text-white px-5 py-3 rounded-xl shadow-2xl max-w-sm flex items-center gap-3 transition-all duration-300';
+            } else {
+                icon.innerHTML = '💡';
+                toast.className = 'fixed top-6 right-6 z-50 bg-gray-900 text-white px-5 py-3 rounded-xl shadow-2xl max-w-sm flex items-center gap-3 transition-all duration-300';
+            }
+
+            toast.style.transform = 'translateX(0)';
+            setTimeout(() => {
+                toast.style.transform = 'translateX(150%)';
+            }, 3500);
+        }
+
+        function openConfirmModal(title, text, callback) {
+            const modal = document.getElementById('customConfirmModal');
+            if (!modal) return;
+            document.getElementById('confirmModalTitle').textContent = title;
+            document.getElementById('confirmModalText').textContent = text;
+            pendingModalCallback = callback;
+            modal.classList.remove('hidden');
+        }
+
+        function closeConfirmModal() {
+            const modal = document.getElementById('customConfirmModal');
+            if (modal) modal.classList.add('hidden');
+            pendingModalCallback = null;
+        }
+
+        document.getElementById('confirmModalSuccessBtn').addEventListener('click', function() {
+            if (pendingModalCallback) {
+                pendingModalCallback();
+            }
+            closeConfirmModal();
+        });
+
+        // Window Init On Load
+        window.onload = function() {
+            try {
+                populateYearSelectors();
+                renderDutyGrid();
+                renderHeaderConfig();
+                renderAdminLinks();
+                renderMusicPlayer();
+                renderAllPosts();
+                applySpecialEventStyle();
+                checkAndSyncUIWithSession();
+            } catch (err) {
+                console.error("Lỗi khi tải dữ liệu khởi động:", err);
+            }
+        };
+
+        function populateYearSelectors() {
+            const elements = ['regBirthYear', 'editBirthYear', 'recBirthYear'];
+            elements.forEach(id => {
+                const select = document.getElementById(id);
+                if (select) {
+                    select.innerHTML = '';
+                    for (let year = CURRENT_YEAR; year >= 1900; year--) {
+                        const opt = document.createElement('option');
+                        opt.value = year;
+                        opt.textContent = year;
+                        select.appendChild(opt);
+                    }
+                }
+            });
+        }
+
+        function renderHeaderConfig() {
+            const header = document.getElementById('headerContainer');
+            const bgImg = document.getElementById('headerBgImg');
+            const logo = document.getElementById('logoContainer');
+
+            if (header && bgImg && logo) {
+                if (state.headerConfig.bgUrl) {
+                    bgImg.style.backgroundImage = `url('${state.headerConfig.bgUrl}')`;
+                    bgImg.style.backgroundSize = `${state.headerConfig.scale}%`;
+                } else {
+                    bgImg.style.backgroundImage = 'none';
+                }
+                header.style.height = `${state.headerConfig.height}px`;
+                logo.textContent = state.headerConfig.logoText;
+            }
+        }
+
+        function renderAdminLinks() {
+            const btn = document.getElementById('tabBtn-sothidua');
+            if (btn) {
+                btn.innerHTML = `<i class="fa fa-book text-lg"></i> ${state.adminLinks.sothiduaLabel}`;
+            }
+        }
+
+        function openSothidua() {
+            if (state.adminLinks.sothiduaUrl) {
+                window.open(state.adminLinks.sothiduaUrl, '_blank');
+            } else {
+                showToast("Admin chưa cấu hình liên kết Sổ thi đua!", "error");
+            }
+        }
+
+        function changeSlide(direction) {
+            const slides = document.querySelectorAll('.slide-item');
+            if (!slides || slides.length === 0) return;
+
+            slides[state.slideIndex].classList.add('hidden');
+            slides[state.slideIndex].classList.remove('block');
+
+            state.slideIndex += direction;
+            if (state.slideIndex >= slides.length) state.slideIndex = 0;
+            if (state.slideIndex < 0) state.slideIndex = slides.length - 1;
+
+            slides[state.slideIndex].classList.add('block');
+            slides[state.slideIndex].classList.remove('hidden');
+        }
+
+        function switchTab(tabId) {
+            document.querySelectorAll('.tab-content').forEach(tab => {
+                tab.classList.add('hidden');
+                tab.classList.remove('block');
+            });
+            document.querySelectorAll('.nav-link').forEach(btn => {
+                btn.classList.remove('bg-orange-600');
+            });
+
+            const tabEl = document.getElementById(`tab-${tabId}`);
+            if (tabEl) {
+                tabEl.classList.remove('hidden');
+                tabEl.classList.add('block');
+            }
+
+            const tabBtn = document.getElementById(`tabBtn-${tabId}`);
+            if (tabBtn) tabBtn.classList.add('bg-orange-600');
+
+            state.activeTab = tabId;
+        }
+
+        function toggleSettingsDrawer() {
+            const drawer = document.getElementById('settingsDrawer');
+            if (!drawer) return;
+            if (drawer.classList.contains('scale-0')) {
+                drawer.classList.remove('scale-0');
+                drawer.classList.add('scale-100');
+            } else {
+                drawer.classList.remove('scale-100');
+                drawer.classList.add('scale-0');
+            }
+        }
+
+        function switchDrawerTab(tab) {
+            const btnMain = document.getElementById('drawerTabBtn-main');
+            const btnAdmin = document.getElementById('drawerTabBtn-admin');
+            const tabMain = document.getElementById('drawerTab-main');
+            const tabAdmin = document.getElementById('drawerTab-admin');
+
+            if (btnMain && btnAdmin && tabMain && tabAdmin) {
+                btnMain.className = tab === 'main' ? 'flex-1 py-2 text-center bg-white border-r text-green-700' : 'flex-1 py-2 text-center text-gray-500 hover:bg-gray-50';
+                btnAdmin.className = tab === 'admin' ? 'flex-1 py-2 text-center bg-white border-r text-green-700' : 'flex-1 py-2 text-center text-gray-500 hover:bg-gray-50';
+
+                tabMain.style.display = tab === 'main' ? 'block' : 'none';
+                tabAdmin.style.display = tab === 'admin' ? 'block' : 'none';
+            }
+            state.activeDrawerTab = tab;
+        }
+
+        function openActionModal(mode) {
+            const actModal = document.getElementById('actionModal');
+            if (!actModal) return;
+
+            actModal.classList.remove('hidden');
+            document.getElementById('modal-register').classList.add('hidden');
+            document.getElementById('modal-login').classList.add('hidden');
+            document.getElementById('modal-recovery').classList.add('hidden');
+
+            const modeModal = document.getElementById(`modal-${mode}`);
+            if (modeModal) modeModal.classList.remove('hidden');
+        }
+
+        function closeActionModal() {
+            const actModal = document.getElementById('actionModal');
+            if (actModal) actModal.classList.add('hidden');
+        }
+
+        function togglePasswordVisibility(inputId, btn) {
+            const input = document.getElementById(inputId);
+            if (!input) return;
+            const icon = btn.querySelector('i');
+            if (input.type === 'password') {
+                input.type = 'text';
+                if (icon) icon.className = 'fa fa-eye-slash';
+            } else {
+                input.type = 'password';
+                if (icon) icon.className = 'fa fa-eye';
+            }
+        }
+
+        function checkAndSyncUIWithSession() {
+            const user = state.currentUser;
+            const postForm = document.getElementById('postForm');
+            const postNotLoggedIn = document.getElementById('postNotLoggedIn');
+            const userPostAvatar = document.getElementById('userPostAvatar');
+            const profileNotLoggedIn = document.getElementById('profileNotLoggedIn');
+            const profileDetails = document.getElementById('profileDetails');
+
+            const adminPanelRestricted = document.getElementById('drawerAdminRestricted');
+            const adminPanelContent = document.getElementById('drawerAdminContent');
+            const editDutyBtn = document.getElementById('editDutyBtn');
+
+            // Pre-fill texts safely
+            const customMarquee = document.getElementById('customMarqueeText');
+            if (customMarquee) {
+                customMarquee.textContent = state.adminTexts.marquee ? ` • ${state.adminTexts.marquee}` : '';
+            }
+            const specSlide = document.getElementById('specialSlideText');
+            if (specSlide) {
+                specSlide.textContent = state.adminTexts.slide3;
+            }
+
+            // Fill admin settings inputs safely
+            const inputs = {
+                'adminMarqueeInput': state.adminTexts.marquee,
+                'adminSlide3Input': state.adminTexts.slide3,
+                'adminHeaderBgInput': state.headerConfig.bgUrl,
+                'adminLogoInput': state.headerConfig.logoText,
+                'adminHeaderHeight': state.headerConfig.height,
+                'adminBgScale': state.headerConfig.scale,
+                'adminSothiduaLabel': state.adminLinks.sothiduaLabel,
+                'adminSothiduaUrl': state.adminLinks.sothiduaUrl,
+                'adminGoogleScriptUrl': state.googleScriptUrl,
+                'adminYoutubePlaylistId': state.youtubePlaylist,
+                'adminSpecialEventSelect': state.specialEvent
+            };
+
+            for (const [id, value] of Object.entries(inputs)) {
+                const el = document.getElementById(id);
+                if (el) el.value = value;
+            }
+
+            if (user) {
+                const initials = getInitials(user.name);
+                
+                // Show post creations
+                if (postForm && postNotLoggedIn && userPostAvatar) {
+                    postForm.classList.remove('hidden');
+                    postNotLoggedIn.classList.add('hidden');
+                    if (user.avatar) {
+                        userPostAvatar.style.backgroundImage = `url('${user.avatar}')`;
+                        userPostAvatar.style.backgroundSize = 'cover';
+                        userPostAvatar.style.backgroundPosition = 'center';
+                        userPostAvatar.textContent = '';
+                    } else {
+                        userPostAvatar.style.backgroundImage = 'none';
+                        userPostAvatar.textContent = initials;
+                    }
+                }
+
+                // Show profile views
+                if (profileDetails && profileNotLoggedIn) {
+                    profileNotLoggedIn.classList.add('hidden');
+                    profileDetails.classList.remove('hidden');
+
+                    const profAvatar = document.getElementById('profileAvatar');
+                    if (profAvatar) {
+                        if (user.avatar) {
+                            profAvatar.style.backgroundImage = `url('${user.avatar}')`;
+                            profAvatar.textContent = '';
+                        } else {
+                            profAvatar.style.backgroundImage = 'none';
+                            profAvatar.textContent = initials;
+                        }
+                    }
+
+                    const profileMap = {
+                        'profileFullName': user.name,
+                        'profileRole': user.role === 'admin' ? 'Admin tối cao' : 'Thành viên Tổ 3',
+                        'profileGroup': user.group || '3',
+                        'profileClass': user.class || '9A3',
+                        'profileBirthYear': user.birthYear,
+                        'editName': user.name,
+                        'editBirthYear': user.birthYear,
+                        'editSchool': user.school || '',
+                        'editClass': user.class || '9A3',
+                        'editGroup': user.group || '3',
+                        'editAvatarUrl': user.avatar || ''
+                    };
+
+                    for (const [id, value] of Object.entries(profileMap)) {
+                        const el = document.getElementById(id);
+                        if (el) {
+                            if (el.tagName === 'INPUT' || el.tagName === 'SELECT') {
+                                el.value = value;
+                            } else {
+                                el.textContent = value;
+                            }
+                        }
+                    }
+                }
+
+                // Unlock Admin Controls
+                if (adminPanelRestricted && adminPanelContent && editDutyBtn) {
+                    if (user.role === 'admin') {
+                        adminPanelRestricted.classList.add('hidden');
+                        adminPanelContent.classList.remove('hidden');
+                        editDutyBtn.classList.remove('hidden');
+                    } else {
+                        adminPanelRestricted.classList.remove('hidden');
+                        adminPanelContent.classList.add('hidden');
+                        editDutyBtn.classList.add('hidden');
+                    }
+                }
+            } else {
+                if (postForm) postForm.classList.add('hidden');
+                if (postNotLoggedIn) postNotLoggedIn.classList.remove('hidden');
+                if (profileDetails) profileDetails.classList.add('hidden');
+                if (profileNotLoggedIn) profileNotLoggedIn.classList.remove('hidden');
+                if (adminPanelRestricted) adminPanelRestricted.classList.remove('hidden');
+                if (adminPanelContent) adminPanelContent.classList.add('hidden');
+                if (editDutyBtn) editDutyBtn.classList.add('hidden');
+            }
+        }
+
+        function getInitials(name) {
+            if (!name) return 'T3';
+            const parts = name.trim().split(/\s+/);
+            if (parts.length >= 2) {
+                return (parts[0][0] + parts[parts.length - 1][0]).toUpperCase();
+            }
+            return name.substring(0, 2).toUpperCase();
+        }
+
+        function handleRegister(event) {
+            event.preventDefault();
+            const name = document.getElementById('regName').value.trim();
+            const birthYear = document.getElementById('regBirthYear').value;
+            const className = document.getElementById('regClass').value.trim();
+            const school = document.getElementById('regSchool').value.trim();
+            const group = document.getElementById('regGroup').value.trim();
+            const password = document.getElementById('regPassword').value;
+            const specialId = document.getElementById('regAdminId').value.trim();
+
+            if (state.users.some(u => u.name.toLowerCase() === name.toLowerCase())) {
+                showToast('Tài khoản có họ tên này đã tồn tại!', 'error');
+                return;
+            }
+
+            let role = 'member';
+            if (specialId.toLowerCase().replace(/\s/g, '') === 'admin') {
+                role = 'admin';
+            }
+
+            const newUser = {
+                id: 'usr_' + Date.now(),
+                name,
+                birthYear,
+                class: className,
+                school,
+                group,
+                password,
+                role,
+                avatar: '',
+                regDate: new Date().toISOString()
+            };
+
+            state.users.push(newUser);
+            localStorage.setItem('t3_users', JSON.stringify(state.users));
+
+            syncToGoogleSheets('register', newUser);
+
+            state.currentUser = newUser;
+            localStorage.setItem('t3_curr_user', JSON.stringify(newUser));
+
+            closeActionModal();
+            checkAndSyncUIWithSession();
+            renderAllPosts();
+            showToast(`Đăng ký thành công! Chào mừng ${name} gia nhập Tổ 3.`, 'success');
+        }
+
+        function handleLogin(event) {
+            event.preventDefault();
+            const name = document.getElementById('loginName').value.trim();
+            const password = document.getElementById('loginPassword').value;
+            const attemptKey = FAKE_LOGIN_ATTEMPTS_KEY + name.toLowerCase();
+
+            let attempts = parseInt(localStorage.getItem(attemptKey)) || 0;
+            if (attempts >= 10) {
+                showToast('Tài khoản đã bị khóa 1 chiều! Vui lòng liên hệ SĐT hoặc Gmail của tổ trưởng: to3lop9a3@gmail.com - 0901234567', 'error');
+                return;
+            }
+
+            const user = state.users.find(u => u.name.toLowerCase() === name.toLowerCase());
+
+            if (!user || user.password !== password) {
+                attempts++;
+                localStorage.setItem(attemptKey, attempts);
+                if (attempts >= 10) {
+                    showToast('Bạn đã đăng nhập sai quá 10 lần! Tài khoản của bạn đã bị khóa tạm thời.', 'error');
+                } else {
+                    showToast(`Tên đăng nhập hoặc mật khẩu sai! Lần thử thứ ${attempts}/10`, 'error');
+                }
+                return;
+            }
+
+            const banList = JSON.parse(localStorage.getItem('t3_ban_list')) || [];
+            const isBanned = banList.find(b => b.userId === user.id);
+            if (isBanned && new Date(isBanned.expiry) > new Date()) {
+                showToast(`Tài khoản của bạn đang bị cấm đăng bài đến: ${new Date(isBanned.expiry).toLocaleString()}`, 'error');
+            }
+
+            localStorage.removeItem(attemptKey);
+            state.currentUser = user;
+            localStorage.setItem('t3_curr_user', JSON.stringify(user));
+
+            closeActionModal();
+            checkAndSyncUIWithSession();
+            renderAllPosts();
+            showToast(`Chào mừng bạn quay trở lại, ${user.name}!`, 'success');
+        }
+
+        function logout() {
+            state.currentUser = null;
+            localStorage.removeItem('t3_curr_user');
+            checkAndSyncUIWithSession();
+            renderAllPosts();
+            showToast('Đã đăng xuất tài khoản thành công!');
+        }
+
+        function handleRecovery(event) {
+            event.preventDefault();
+            const name = document.getElementById('recName').value.trim();
+            const birthYear = document.getElementById('recBirthYear').value;
+            const className = document.getElementById('recClass').value.trim();
+            const school = document.getElementById('recSchool').value.trim();
+            const newPassword = document.getElementById('recNewPassword').value;
+
+            const userIndex = state.users.findIndex(u => 
+                u.name.toLowerCase() === name.toLowerCase() &&
+                u.birthYear == birthYear &&
+                u.class.toLowerCase() === className.toLowerCase() &&
+                u.school.toLowerCase() === school.toLowerCase()
+            );
+
+            if (userIndex === -1) {
+                showToast('Thông tin xác minh không chính xác!', 'error');
+                return;
+            }
+
+            state.users[userIndex].password = newPassword;
+            localStorage.setItem('t3_users', JSON.stringify(state.users));
+
+            syncToGoogleSheets('edit_profile', {
+                ...state.users[userIndex],
+                logMessage: 'Khôi phục mật khẩu tài khoản'
+            });
+
+            closeActionModal();
+            showToast('Khôi phục mật khẩu thành công! Hãy đăng nhập lại.', 'success');
+        }
+
+        function handleEditProfile(event) {
+            event.preventDefault();
+            // Tránh submit form mặc định, xử lý qua modal custom
+        }
+
+        function applyProfileChanges() {
+            const user = state.currentUser;
+            if (!user) return;
+
+            const updatedName = document.getElementById('editName').value.trim();
+            const updatedBirthYear = document.getElementById('editBirthYear').value;
+            const updatedSchool = document.getElementById('editSchool').value.trim();
+            const updatedClass = document.getElementById('editClass').value.trim();
+            const updatedGroup = document.getElementById('editGroup').value.trim();
+            const updatedAvatar = document.getElementById('editAvatarUrl').value.trim();
+            const updatedPassword = document.getElementById('editPassword').value;
+
+            const userIndex = state.users.findIndex(u => u.id === user.id);
+            if (userIndex !== -1) {
+                state.users[userIndex].name = updatedName;
+                state.users[userIndex].birthYear = updatedBirthYear;
+                state.users[userIndex].school = updatedSchool;
+                state.users[userIndex].class = updatedClass;
+                state.users[userIndex].group = updatedGroup;
+                state.users[userIndex].avatar = updatedAvatar;
+                if (updatedPassword) {
+                    state.users[userIndex].password = updatedPassword;
+                }
+
+                state.currentUser = state.users[userIndex];
+                localStorage.setItem('t3_users', JSON.stringify(state.users));
+                localStorage.setItem('t3_curr_user', JSON.stringify(state.currentUser));
+
+                syncToGoogleSheets('edit_profile', {
+                    ...state.currentUser,
+                    logMessage: 'Sửa đổi thông tin cá nhân'
+                });
+
+                checkAndSyncUIWithSession();
+                renderAllPosts();
+                showToast('Thông tin của bạn đã được cập nhật thành công!', 'success');
+            }
+        }
+
+        function triggerAvatarUpload() {
+            const avatarFile = document.getElementById('editAvatarFile');
+            if (avatarFile) avatarFile.click();
+        }
+
+        function previewFileAvatar(event) {
+            const file = event.target.files[0];
+            const label = document.getElementById('editAvatarFileLabel');
+            if (file) {
+                if (label) label.textContent = file.name;
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    const avatarUrlInput = document.getElementById('editAvatarUrl');
+                    if (avatarUrlInput) avatarUrlInput.value = e.target.result;
+                    showToast('Đã nhận diện ảnh! Hãy nhấn Xác nhận thay đổi để áp dụng.');
+                };
+                reader.readAsDataURL(file);
+            }
+        }
+
+        // TEXT POST FORMATTINGS
+        function insertFormat(openTag, closeTag) {
+            const textarea = document.getElementById('postTextContent');
+            if (!textarea) return;
+            const start = textarea.selectionStart;
+            const end = textarea.selectionEnd;
+            const text = textarea.value;
+            const selectedText = text.substring(start, end);
+            const replacement = openTag + selectedText + closeTag;
+            
+            textarea.value = text.substring(0, start) + replacement + text.substring(end);
+            textarea.focus();
+            textarea.setSelectionRange(start + openTag.length, start + openTag.length + selectedText.length);
+        }
+
+        function insertColorFormat() {
+            const color = prompt("Nhập mã màu HEX hoặc tên tiếng Anh (Ví dụ: red, #ff0000):", "red");
+            if (color) {
+                insertFormat(`[color=${color}]`, `[/color]`);
+            }
+        }
+
+        function insertImagePrompt() {
+            const imgUrl = prompt("Nhập URL liên kết hình ảnh:");
+            if (imgUrl) {
+                insertFormat(`[img]${imgUrl}[/img]`, '');
+            }
+        }
+
+        function parsePostContent(text) {
+            let html = text
+                .replace(/&/g, "&amp;")
+                .replace(/</g, "&lt;")
+                .replace(/>/g, "&gt;")
+                .replace(/\n/g, "<br>");
+
+            html = html.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+            html = html.replace(/\*(.*?)\*/g, '<em>$1</em>');
+            html = html.replace(/\[color=(.*?)\](.*?)\[\/color\]/g, '<span style="color: $1">$2</span>');
+            html = html.replace(/\[img\](.*?)\[\/img\]/g, '<img src="$1" class="max-h-60 rounded-xl shadow-md mt-2 max-w-full" onerror="this.onerror=null; this.src=\'https://via.placeholder.com/300?text=Loi+tai+anh\'" />');
+
+            return html;
+        }
+
+        function submitNewPost() {
+            const text = document.getElementById('postTextContent').value.trim();
+            if (!text) {
+                showToast('Vui lòng viết gì đó trước khi gửi bài!', 'error');
+                return;
+            }
+
+            const user = state.currentUser;
+            const banList = JSON.parse(localStorage.getItem('t3_ban_list')) || [];
+            const isBanned = banList.find(b => b.userId === user.id);
+            if (isBanned && new Date(isBanned.expiry) > new Date()) {
+                showToast(`Bạn đang bị cấm đăng bài đến: ${new Date(isBanned.expiry).toLocaleString()}`, 'error');
+                return;
+            }
+
+            const newPost = {
+                id: 'post_' + Date.now(),
+                userId: user.id,
+                userName: user.name,
+                userAvatar: user.avatar,
+                userRole: user.role,
+                content: text,
+                timestamp: new Date().toISOString()
+            };
+
+            state.posts.push(newPost);
+            localStorage.setItem('t3_posts', JSON.stringify(state.posts));
+            document.getElementById('postTextContent').value = '';
+
+            renderAllPosts();
+            showToast('Bài đăng của bạn đã xuất hiện thành công!');
+        }
+
+        let activePostIdToDelete = null;
+        function deletePost(postId) {
+            activePostIdToDelete = postId;
+            openConfirmModal('Thu hồi bài viết', 'Bạn có chắc chắn muốn xóa bài viết này không?', applyDeletePost);
+        }
+
+        function applyDeletePost() {
+            if (!activePostIdToDelete) return;
+            state.posts = state.posts.filter(p => p.id !== activePostIdToDelete);
+            localStorage.setItem('t3_posts', JSON.stringify(state.posts));
+            renderAllPosts();
+            showToast('Bài đăng đã được thu hồi!');
+            activePostIdToDelete = null;
+        }
+
+        function banUserPrompt(userId, userName) {
+            const user = state.currentUser;
+            if (!user || user.role !== 'admin') return;
+
+            const durationSelect = prompt("Nhập số phút muốn cấm (Nhập 'vinhvien' để khóa vĩnh viễn):", "60");
+            if (!durationSelect) return;
+
+            let expiry = new Date();
+            if (durationSelect.toLowerCase() === 'vinhvien') {
+                expiry = new Date(CURRENT_YEAR + 10, 0, 1);
+            } else {
+                const minutes = parseInt(durationSelect);
+                if (isNaN(minutes)) {
+                    showToast('Định dạng thời gian không hợp lệ!', 'error');
+                    return;
+                }
+                expiry.setMinutes(expiry.getMinutes() + minutes);
+            }
+
+            const banList = JSON.parse(localStorage.getItem('t3_ban_list')) || [];
+            const existingBanIndex = banList.findIndex(b => b.userId === userId);
+            
+            const banInfo = { userId, userName, expiry: expiry.toISOString() };
+            if (existingBanIndex !== -1) {
+                banList[existingBanIndex] = banInfo;
+            } else {
+                banList.push(banInfo);
+            }
+
+            localStorage.setItem('t3_ban_list', JSON.stringify(banList));
+            syncToGoogleSheets('ban', banInfo);
+            showToast(`Đã cấm tài khoản ${userName} thành công!`, 'success');
+        }
+
+        function renderAllPosts() {
+            const adminList = document.getElementById('adminPostList');
+            const allList = document.getElementById('allPostList');
+
+            if (!adminList || !allList) return;
+
+            adminList.innerHTML = '';
+            allList.innerHTML = '';
+
+            const sortedPosts = [...state.posts].sort((a, b) => new Date(b.timestamp) - new Date(a.timestamp));
+
+            let adminCount = 0;
+            let totalCount = sortedPosts.length;
+
+            sortedPosts.forEach(post => {
+                const initials = getInitials(post.userName);
+                const timeString = new Date(post.timestamp).toLocaleString('vi-VN');
+                
+                const isOp = state.currentUser && state.currentUser.id === post.userId;
+                const isViewerAdmin = state.currentUser && state.currentUser.role === 'admin';
+
+                const avatarMarkup = post.userAvatar 
+                    ? `<div class="w-10 h-10 rounded-full border shadow-inner overflow-hidden bg-cover bg-center" style="background-image: url('${post.userAvatar}')"></div>`
+                    : `<div class="w-10 h-10 rounded-full bg-green-600 text-white flex items-center justify-center font-bold text-sm shadow">${initials}</div>`;
+
+                const roleBadge = post.userRole === 'admin' 
+                    ? `<span class="bg-red-100 text-red-700 text-[10px] font-black px-2 py-0.5 rounded-full border border-red-200">ADMIN</span>`
+                    : `<span class="bg-gray-100 text-gray-600 text-[10px] font-bold px-2 py-0.5 rounded-full border border-gray-200">Tổ 3</span>`;
+
+                const controls = (isOp || isViewerAdmin) 
+                    ? `<button onclick="deletePost('${post.id}')" class="text-xs text-red-500 hover:underline font-bold flex items-center gap-1"><i class="fa fa-trash"></i> Gỡ</button>`
+                    : '';
+
+                const banBtn = (isViewerAdmin && post.userRole !== 'admin')
+                    ? `<button onclick="banUserPrompt('${post.userId}', '${post.userName}')" class="text-xs text-gray-500 hover:text-red-600 font-bold flex items-center gap-1"><i class="fa fa-ban"></i> Cấm</button>`
+                    : '';
+
+                const postCard = `
+                    <div class="border border-gray-100 bg-white p-5 rounded-2xl shadow-sm space-y-3 transition-all hover:border-gray-200">
+                        <div class="flex justify-between items-start gap-3">
+                            <div class="flex items-center gap-3">
+                                ${avatarMarkup}
+                                <div>
+                                    <div class="flex items-center gap-1.5">
+                                        <h4 class="font-extrabold text-sm text-gray-800">${post.userName}</h4>
+                                        ${roleBadge}
+                                    </div>
+                                    <p class="text-[10px] text-gray-400 font-semibold">${timeString}</p>
+                                </div>
+                            </div>
+                            <div class="flex gap-2.5">
+                                ${banBtn}
+                                ${controls}
+                            </div>
+                        </div>
+                        <div class="text-sm text-gray-700 leading-relaxed font-medium pl-1">
+                            ${parsePostContent(post.content)}
+                        </div>
+                    </div>
+                `;
+
+                allList.innerHTML += postCard;
+
+                if (post.userRole === 'admin') {
+                    adminList.innerHTML += postCard;
+                    adminCount++;
+                }
+            });
+
+            const countAdmin = document.getElementById('postCountAdmin');
+            const countAll = document.getElementById('postCountAll');
+            if (countAdmin) countAdmin.textContent = `${adminCount} bài viết`;
+            if (countAll) countAll.textContent = `${totalCount} bài viết`;
+        }
+
+        // Duty Grid logic
+        function renderDutyGrid() {
+            const tbody = document.getElementById('dutyTableBody');
+            if (!tbody) return;
+
+            tbody.innerHTML = '';
+            state.dutyGrid.forEach(item => {
+                const row = document.createElement('tr');
+                row.className = 'hover:bg-gray-50';
+                row.innerHTML = `
+                    <td class="p-2 border border-gray-100 bg-green-50/50 font-bold text-green-800">${item.day}</td>
+                    <td class="p-2 border border-gray-100 font-semibold text-gray-700">${item.clean}</td>
+                    <td class="p-2 border border-gray-100 text-gray-600">${item.duty}</td>
+                `;
+                tbody.appendChild(row);
+            });
+        }
+
+        function openDutyEditor() {
+            const tbody = document.getElementById('dutyEditorTableBody');
+            if (!tbody) return;
+            document.getElementById('dutyEditorModal').classList.remove('hidden');
+            tbody.innerHTML = '';
+            
+            state.dutyGrid.forEach((item, index) => {
+                const row = document.createElement('tr');
+                row.innerHTML = `
+                    <td class="p-2 border bg-gray-50 font-bold"><input type="text" id="dutyDay-${index}" class="w-full border p-1 rounded bg-transparent outline-none" value="${item.day}"></td>
+                    <td class="p-2 border"><input type="text" id="dutyClean-${index}" class="w-full border p-1 rounded outline-none" value="${item.clean}"></td>
+                    <td class="p-2 border"><input type="text" id="dutyDuty-${index}" class="w-full border p-1 rounded outline-none" value="${item.duty}"></td>
+                `;
+                tbody.appendChild(row);
+            });
+        }
+
+        function closeDutyEditor() {
+            const modal = document.getElementById('dutyEditorModal');
+            if (modal) modal.classList.add('hidden');
+        }
+
+        function saveDutyGrid() {
+            const updatedGrid = [];
+            state.dutyGrid.forEach((item, index) => {
+                updatedGrid.push({
+                    day: document.getElementById(`dutyDay-${index}`).value.trim(),
+                    clean: document.getElementById(`dutyClean-${index}`).value.trim(),
+                    duty: document.getElementById(`dutyDuty-${index}`).value.trim()
+                });
+            });
+
+            state.dutyGrid = updatedGrid;
+            localStorage.setItem('t3_duty_grid', JSON.stringify(state.dutyGrid));
+            
+            renderDutyGrid();
+            closeDutyEditor();
+            showToast('Cập nhật Sổ trực tuần thành công!', 'success');
+        }
+
+        // Admin changes
+        function saveAdminTexts() {
+            const marquee = document.getElementById('adminMarqueeInput').value.trim();
+            const slide3 = document.getElementById('adminSlide3Input').value.trim();
+
+            state.adminTexts.marquee = marquee;
+            state.adminTexts.slide3 = slide3;
+
+            localStorage.setItem('t3_admin_texts', JSON.stringify(state.adminTexts));
+            checkAndSyncUIWithSession();
+            showToast('Thông báo và slide quảng bá đã được cập nhật!', 'success');
+        }
+
+        function saveAdminHeaderSettings() {
+            const bgUrl = document.getElementById('adminHeaderBgInput').value.trim();
+            const logoText = document.getElementById('adminLogoInput').value.trim();
+            const height = parseInt(document.getElementById('adminHeaderHeight').value) || 180;
+            const scale = parseInt(document.getElementById('adminBgScale').value) || 100;
+
+            state.headerConfig = { bgUrl, logoText, height, scale };
+            localStorage.setItem('t3_header_config', JSON.stringify(state.headerConfig));
+
+            renderHeaderConfig();
+            showToast('Đã lưu cấu hình thiết kế Header!', 'success');
+        }
+
+        function saveAdminMusic() {
+            const playlistId = document.getElementById('adminYoutubePlaylistId').value.trim();
+            if (!playlistId) {
+                showToast('Chưa nhập ID playlist!', 'error');
+                return;
+            }
+            state.youtubePlaylist = playlistId;
+            localStorage.setItem('t3_yt_playlist', playlistId);
+            renderMusicPlayer();
+            showToast('Đã cấu hình danh sách bài hát mới!', 'success');
+        }
+
+        function saveAdminLinks() {
+            const label = document.getElementById('adminSothiduaLabel').value.trim();
+            const url = document.getElementById('adminSothiduaUrl').value.trim();
+
+            state.adminLinks = { sothiduaLabel: label, sothiduaUrl: url };
+            localStorage.setItem('t3_admin_links', JSON.stringify(state.adminLinks));
+
+            renderAdminLinks();
+            showToast('Đã cập nhật cấu hình liên kết nút!', 'success');
+        }
+
+        function saveGoogleScriptUrl() {
+            const url = document.getElementById('adminGoogleScriptUrl').value.trim();
+            state.googleScriptUrl = url;
+            localStorage.setItem('t3_gs_url', url);
+            showToast('Đã lưu địa chỉ tích hợp Google Sheets API!', 'success');
+        }
+
+        function syncAllLocalUsersToSheets() {
+            if (!state.googleScriptUrl) {
+                showToast('Vui lòng lưu URL Google Script trước!', 'error');
+                return;
+            }
+            if (state.users.length === 0) {
+                showToast('Không có dữ liệu tài khoản nào trên máy!', 'error');
+                return;
+            }
+
+            showToast('Đang tiến hành đồng bộ dữ liệu...');
+            let successCount = 0;
+            state.users.forEach(user => {
+                syncToGoogleSheets('register', user);
+                successCount++;
+            });
+            showToast(`Đã gửi yêu cầu đồng bộ ${successCount} tài khoản lên Google Sheets!`, 'success');
+        }
+
+        function saveSpecialEvent() {
+            const eventVal = document.getElementById('adminSpecialEventSelect').value;
+            state.specialEvent = eventVal;
+            localStorage.setItem('t3_special_event', eventVal);
+            applySpecialEventStyle();
+            showToast('Sự kiện đặc biệt đã được áp dụng!', 'success');
+        }
+
+        function applySpecialEventStyle() {
+            const root = document.getElementById('mainWrapper');
+            const marquee = document.getElementById('marqueeAnnounce');
+            if (root && marquee) {
+                if (state.specialEvent === 'mourning') {
+                    root.classList.add('special-event-monochrome');
+                    marquee.className = "bg-gray-950 border-b border-gray-800 py-2.5 px-4 marquee-container text-sm font-semibold text-gray-300";
+                } else if (state.specialEvent === 'celebrate') {
+                    root.classList.remove('special-event-monochrome');
+                    marquee.className = "bg-red-50 border-b border-red-200 py-2.5 px-4 marquee-container text-sm font-semibold text-red-800";
+                } else {
+                    root.classList.remove('special-event-monochrome');
+                    marquee.className = "bg-yellow-50 border-b border-yellow-200 py-2.5 px-4 marquee-container text-sm font-semibold text-yellow-800";
+                }
+            }
+        }
+
+        // YOUTUBE MUSIC CONTROLLER
+        let ytPlayer;
+        let isMusicPlaying = false;
+        let isMusicWidgetOpen = false;
+
+        function toggleMusicWidget() {
+            const box = document.getElementById('musicFloatingBox');
+            if (!box) return;
+            if (isMusicWidgetOpen) {
+                box.style.transform = 'translateX(-120%)';
+                box.style.opacity = '0';
+                isMusicWidgetOpen = false;
+            } else {
+                box.style.transform = 'translateX(0)';
+                box.style.opacity = '1';
+                isMusicWidgetOpen = true;
+            }
+        }
+
+        function renderMusicPlayer() {
+            const container = document.getElementById('youtubePlayerContainer');
+            if (container) {
+                container.innerHTML = `
+                    <iframe id="ytIframe" width="10" height="10" 
+                        src="https://www.youtube.com/embed?listType=playlist&list=${state.youtubePlaylist}&enablejsapi=1&version=3&autoplay=0&controls=0&loop=1" 
+                        frameborder="0" allow="autoplay"></iframe>
+                `;
+                setTimeout(() => {
+                    const iframe = document.getElementById('ytIframe');
+                    if (iframe) {
+                        ytPlayer = iframe.contentWindow;
+                    }
+                }, 1000);
+            }
+        }
+
+        function toggleMusicPlay() {
+            const icon = document.getElementById('musicPlayIcon');
+            const marquee = document.getElementById('musicTrackName');
+            
+            if (!ytPlayer) return;
+
+            if (isMusicPlaying) {
+                ytPlayer.postMessage('{"event":"command","func":"pauseVideo","args":""}', '*');
+                if (icon) icon.className = 'fa fa-play';
+                if (marquee) marquee.textContent = 'Trình phát nhạc đã tạm dừng.';
+                isMusicPlaying = false;
+            } else {
+                ytPlayer.postMessage('{"event":"command","func":"playVideo","args":""}', '*');
+                if (icon) icon.className = 'fa fa-pause';
+                if (marquee) marquee.textContent = 'Đang phát danh sách nhạc độc quyền Tổ 3 🎵';
+                isMusicPlaying = true;
+            }
+        }
+
+        // QUICK SEARCH AND UTILS
+        function triggerQuickSearch() {
+            const word = document.getElementById('quickSearchInput').value.trim().toLowerCase();
+            if (!word) return;
+
+            switchTab('sanh');
+            const postsCards = document.querySelectorAll('#allPostList > div');
+            let found = 0;
+            postsCards.forEach(card => {
+                if (card.textContent.toLowerCase().includes(word)) {
+                    card.style.display = 'block';
+                    found++;
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+
+            showToast(`Đã lọc ra ${found} bài viết phù hợp từ khóa.`, 'success');
+        }
+
+        function triggerSearchFocus() {
+            toggleSettingsDrawer();
+            const searchInput = document.getElementById('quickSearchInput');
+            if (searchInput) searchInput.focus();
+            showToast('Vui lòng gõ từ khóa vào khung tìm kiếm ở cột phải!');
+        }
+
+        function reloadPage() {
+            window.location.reload();
+        }
+
+        function adjustZoom(factor) {
+            state.zoomLevel += factor;
+            if (state.zoomLevel < 80) state.zoomLevel = 80;
+            if (state.zoomLevel > 140) state.zoomLevel = 140;
+
+            const wrapper = document.getElementById('mainWrapper');
+            const zoomDisp = document.getElementById('zoomDisplay');
+            if (wrapper && zoomDisp) {
+                wrapper.style.transform = `scale(${state.zoomLevel / 100})`;
+                wrapper.style.transformOrigin = 'top center';
+                zoomDisp.textContent = `${state.zoomLevel}%`;
+            }
+        }
+
+        // GOD OF ADMIN ENGINE
+        function openGodOfAdminModal() {
+            toggleSettingsDrawer();
+            const modal = document.getElementById('godOfAdminModal');
+            const textArea = document.getElementById('godCodeTextArea');
+            if (modal && textArea) {
+                modal.classList.remove('hidden');
+                const rawHtml = localStorage.getItem('t3_god_code') || document.documentElement.outerHTML;
+                textArea.value = rawHtml;
+            }
+        }
+
+        function closeGodOfAdminModal() {
+            const modal = document.getElementById('godOfAdminModal');
+            if (modal) modal.classList.add('hidden');
+        }
+
+        function saveGodCode() {
+            const inputCode = document.getElementById('godCodeTextArea').value;
+            if (!inputCode.trim()) {
+                showToast('Mã nguồn không được bỏ trống!', 'error');
+                return;
+            }
+            localStorage.setItem('t3_god_code', inputCode);
+            showToast('Lưu code thành công! Đang tải lại...', 'success');
+            setTimeout(() => {
+                window.location.reload();
+            }, 1500);
+        }
+
+        function restoreFactoryCode() {
+            localStorage.removeItem('t3_god_code');
+            showToast('Mã gốc đã được khôi phục! Hệ thống tải lại...');
+            setTimeout(() => {
+                window.location.reload();
+            }, 1500);
+        }
+
+        // API SHEETS INTERACTION
+        function syncToGoogleSheets(type, dataPayload) {
+            if (!state.googleScriptUrl) return;
+
+            const params = {
+                sheetAction: type, 
+                payload: JSON.stringify(dataPayload)
+            };
+
+            fetch(state.googleScriptUrl, {
+                method: 'POST',
+                mode: 'no-cors',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(params)
+            })
+            .then(() => {
+                console.log('Đã gửi yêu cầu đồng bộ Google Sheets');
+            })
+            .catch(err => {
+                console.warn('Kết nối API Google Sheets bị gián đoạn:', err);
+            });
+        }
+    </script>
+</body>
+</html>
