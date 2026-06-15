@@ -8,8 +8,10 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- FontAwesome Icons CDN -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts Integration -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=Montserrat:wght@400;700;900&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Roboto:wght@400;700&family=Patrick+Hand&family=Quicksand:wght@500;700&display=swap" rel="stylesheet">
+    
     <style>
-        /* CSS custom overrides */
         .marquee-container {
             overflow: hidden;
             white-space: nowrap;
@@ -24,11 +26,9 @@
             0% { transform: translate3d(100%, 0, 0); }
             100% { transform: translate3d(-100%, 0, 0); }
         }
-        /* Black and White mode for Special Events */
         .special-event-monochrome {
             filter: grayscale(100%) !important;
         }
-        /* Custom scrollbar */
         ::-webkit-scrollbar {
             width: 6px;
             height: 6px;
@@ -43,12 +43,19 @@
         ::-webkit-scrollbar-thumb:hover {
             background: #555;
         }
+        
+        /* Font Styles Mapping */
+        .font-inter { font-family: 'Inter', sans-serif; }
+        .font-montserrat { font-family: 'Montserrat', sans-serif; }
+        .font-playfair { font-family: 'Playfair Display', serif; }
+        .font-roboto { font-family: 'Roboto', sans-serif; }
+        .font-patrick { font-family: 'Patrick Hand', cursive; }
+        .font-quicksand { font-family: 'Quicksand', sans-serif; }
     </style>
     <script>
         (function() {
             try {
                 const urlParams = new URLSearchParams(window.location.search);
-                // Chống sập tuyệt đối: Nếu có tham số safe=true hoặc raw=true, xóa sạch mã hỏng lập tức!
                 if (urlParams.get('safe') === 'true' || urlParams.get('raw') === 'true') {
                     localStorage.removeItem('t3_god_code');
                     console.log("Đã kích hoạt Safe Guard: Reset cấu hình tùy biến về trạng thái gốc an toàn.");
@@ -67,7 +74,7 @@
         })();
     </script>
 </head>
-<body class="bg-gray-100 text-gray-800 transition-all duration-300 min-h-screen flex flex-col">
+<body class="bg-gray-100 text-gray-800 transition-all duration-300 min-h-screen flex flex-col font-inter" id="bodyWrapper">
 
     <!-- Top Banner & Slogan -->
     <div id="topBanner" class="bg-green-600 text-white text-center py-2 px-4 font-bold text-sm md:text-base tracking-wide z-10 shadow-md">
@@ -76,15 +83,25 @@
 
     <div class="max-w-7xl mx-auto w-full bg-white flex-1 flex flex-col shadow-xl" id="mainWrapper">
         
+        <!-- Cloud Sync Status Bar -->
+        <div class="bg-blue-50 border-b border-blue-100 px-6 py-2 flex justify-between items-center text-xs font-semibold text-blue-800">
+            <span class="flex items-center gap-1.5">
+                <span id="syncDot" class="w-2.5 h-2.5 bg-yellow-500 rounded-full animate-ping"></span>
+                <span id="syncStatusText">Hệ thống đồng bộ: Đang tải dữ liệu đám mây...</span>
+            </span>
+            <button onclick="pullLatestCloudData()" class="hover:underline flex items-center gap-1 text-blue-600">
+                <i class="fa fa-sync-alt animate-spin" id="syncSpinner"></i> Làm mới dữ liệu
+            </button>
+        </div>
+
         <!-- Header Section -->
-        <header id="headerContainer" class="relative p-6 border-b border-gray-200 flex flex-col md:flex-row justify-between items-center gap-6 overflow-hidden transition-all duration-500 animate-fade-in" style="background: linear-gradient(135deg, #e0f2fe 0%, #ffffff 100%); min-height: 180px;">
-            
-            <!-- Custom Background Thumbnail Managed by Admin -->
-            <div id="headerBgImg" class="absolute inset-0 pointer-events-none bg-center bg-cover opacity-20 transition-all duration-300"></div>
+        <header id="headerContainer" class="relative p-6 border-b border-gray-200 flex flex-col md:flex-row justify-between items-center gap-6 overflow-hidden transition-all duration-500" style="background: linear-gradient(135deg, #e0f2fe 0%, #ffffff 100%); min-height: 180px;">
+            <div id="headerBgImg" class="absolute inset-0 pointer-events-none bg-center bg-cover opacity-30 transition-all duration-300"></div>
 
             <div class="flex items-center gap-4 z-10" id="brandHeader">
                 <div id="logoWrapper" class="relative group cursor-pointer">
-                    <div id="logoContainer" class="w-24 h-24 bg-yellow-300 rounded-full border-4 border-red-500 flex flex-col items-center justify-center font-black text-red-600 text-xs shadow-lg text-center p-2 leading-tight transition-all duration-300">
+                    <!-- Dynamic Logo text or Image -->
+                    <div id="logoContainer" class="w-24 h-24 bg-yellow-300 rounded-full border-4 border-red-500 flex flex-col items-center justify-center font-black text-red-600 text-xs shadow-lg text-center p-2 leading-tight transition-all duration-300 bg-cover bg-center">
                         HỘI ĐỒNG TỔ 3 - LỚP 9A3
                     </div>
                 </div>
@@ -137,7 +154,6 @@
                         </div>
                     </div>
                 </div>
-                <!-- Control arrows -->
                 <button onclick="changeSlide(-1)" class="absolute left-1 top-1/2 -translate-y-1/2 bg-black/10 hover:bg-black/30 text-gray-800 w-6 h-6 rounded-full flex items-center justify-center font-bold text-xs">❮</button>
                 <button onclick="changeSlide(1)" class="absolute right-1 top-1/2 -translate-y-1/2 bg-black/10 hover:bg-black/30 text-gray-800 w-6 h-6 rounded-full flex items-center justify-center font-bold text-xs">❯</button>
             </div>
@@ -347,7 +363,7 @@
                         <div class="border border-gray-200 rounded-2xl p-6 bg-white">
                             <h4 class="font-extrabold text-lg text-gray-800 mb-4 border-b pb-2 flex justify-between items-center">
                                 <span>Cập Nhật Thông Tin Tài Khoản</span>
-                                <span class="text-xs text-red-500 font-bold">Mỗi người 2 tuần được đổi 1 lần</span>
+                                <span class="text-xs text-red-500 font-bold" id="cooldownNotice">Thành viên: 1 tháng/lần • Admin: 3 lần/tháng</span>
                             </h4>
                             <form id="editProfileForm" onsubmit="handleEditProfile(event)" class="space-y-4">
                                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -393,7 +409,7 @@
                                 </div>
 
                                 <div class="flex justify-end pt-2">
-                                    <button type="button" onclick="openConfirmModal('Xác nhận thay đổi', 'Bạn có chắc chắn muốn cập nhật toàn bộ thông tin tài khoản cá nhân của bạn không?', applyProfileChanges)" class="bg-green-600 hover:bg-green-700 text-white font-bold px-6 py-2.5 rounded-lg text-sm transition-colors shadow">
+                                    <button type="submit" class="bg-green-600 hover:bg-green-700 text-white font-bold px-6 py-2.5 rounded-lg text-sm transition-colors shadow">
                                         Xác nhận thay đổi
                                     </button>
                                 </div>
@@ -544,15 +560,31 @@
                         <button onclick="saveAdminTexts()" class="w-full bg-green-600 hover:bg-green-700 text-white font-bold py-1.5 rounded text-xs">Cập nhật tin tức</button>
                     </div>
 
-                    <!-- Custom Header Banner BG & Logo Image -->
+                    <!-- Custom Header Banner BG & Font Choice -->
                     <div class="space-y-2 border-b pb-3">
                         <h4 class="font-extrabold text-xs text-green-700 uppercase">2. Tùy biến Header & Banner</h4>
-                        <input type="text" id="adminHeaderBgInput" class="w-full border p-1.5 text-xs rounded outline-none" placeholder="Link ảnh nền Header (URL)">
-                        <input type="text" id="adminLogoInput" class="w-full border p-1.5 text-xs rounded outline-none" placeholder="Nội dung chữ Logo (Ví dụ: TỔ 3 - 9A3)">
+                        <input type="text" id="adminHeaderBgInput" class="w-full border p-1.5 text-xs rounded outline-none" placeholder="Link ảnh nền Header (URL hoặc Base64)">
+                        <input type="text" id="adminLogoInput" class="w-full border p-1.5 text-xs rounded outline-none" placeholder="Link ảnh Logo hoặc chữ Logo tùy biến">
+                        
                         <div class="grid grid-cols-2 gap-1 text-[10px]">
                             <label>Chiều cao Header (px): <input type="number" id="adminHeaderHeight" class="w-full border p-1" value="180"></label>
                             <label>Tỷ lệ ảnh nền (%): <input type="number" id="adminBgScale" class="w-full border p-1" value="100"></label>
+                            <label>Dịch chuyển X (%): <input type="number" id="adminBgPosX" class="w-full border p-1" value="50"></label>
+                            <label>Dịch chuyển Y (%): <input type="number" id="adminBgPosY" class="w-full border p-1" value="50"></label>
                         </div>
+
+                        <div class="space-y-1">
+                            <label class="block text-[10px] text-gray-500">Kiểu Font chữ trang web:</label>
+                            <select id="adminFontSelect" class="w-full border p-1 text-xs rounded outline-none">
+                                <option value="font-inter">Inter (Hiện đại)</option>
+                                <option value="font-montserrat">Montserrat (Đậm đà)</option>
+                                <option value="font-playfair">Playfair Display (Cổ điển)</option>
+                                <option value="font-roboto">Roboto (Tiêu chuẩn)</option>
+                                <option value="font-patrick">Patrick Hand (Viết tay)</option>
+                                <option value="font-quicksand">Quicksand (Mềm mại)</option>
+                            </select>
+                        </div>
+
                         <button onclick="saveAdminHeaderSettings()" class="w-full bg-green-600 hover:bg-green-700 text-white font-bold py-1.5 rounded text-xs">Lưu cài đặt Header</button>
                     </div>
 
@@ -575,7 +607,7 @@
                         <button onclick="saveAdminLinks()" class="w-full bg-green-600 hover:bg-green-700 text-white font-bold py-1.5 rounded text-xs">Cập nhật liên kết</button>
                     </div>
 
-                    <!-- Special Event Controls (e.g. National Mourning) -->
+                    <!-- Special Event Controls -->
                     <div class="space-y-2 border-b pb-3">
                         <h4 class="font-extrabold text-xs text-green-700 uppercase">5. Chế độ sự kiện đặc biệt</h4>
                         <select id="adminSpecialEventSelect" class="w-full border p-1.5 text-xs rounded outline-none">
@@ -779,7 +811,7 @@
         </div>
     </div>
 
-    <!-- CUSTOM CONFIRMATION MODAL (Thay thế cho lệnh confirm() nguyên bản của trình duyệt) -->
+    <!-- CUSTOM CONFIRMATION MODAL -->
     <div id="customConfirmModal" class="fixed inset-0 bg-black/70 backdrop-blur-sm z-[999] flex items-center justify-center p-4 hidden">
         <div class="bg-white rounded-2xl shadow-2xl w-full max-w-sm overflow-hidden transform scale-95 transition-all">
             <div class="bg-red-600 text-white p-4 font-bold text-sm flex items-center gap-2">
@@ -815,12 +847,16 @@
             headerConfig: JSON.parse(localStorage.getItem('t3_header_config')) || {
                 bgUrl: '',
                 logoText: 'HỘI ĐỒNG TỔ 3 - LỚP 9A3',
+                logoUrl: '', // Logo image URL override
                 height: 180,
-                scale: 100
+                scale: 100,
+                posX: 50,
+                posY: 50,
+                fontStyle: 'font-inter'
             },
             adminLinks: JSON.parse(localStorage.getItem('t3_admin_links')) || {
                 sothiduaLabel: 'Sổ Thi Đua',
-                sothiduaUrl: 'https://sites.google.com'
+                sothiduaUrl: 'https://sites.google.com/view/to3-lop8a3' // Default to your site link
             },
             dutyGrid: JSON.parse(localStorage.getItem('t3_duty_grid')) || [
                 { day: 'Thứ 2', clean: 'An, Bình', duty: 'Quét phòng' },
@@ -843,6 +879,7 @@
         const FAKE_LOGIN_ATTEMPTS_KEY = 't3_login_attempts_';
         let pendingModalCallback = null;
 
+        // Custom Notification Controller
         function showToast(message, type = 'info') {
             const toast = document.getElementById('customToast');
             const icon = document.getElementById('toastIcon');
@@ -868,6 +905,7 @@
             }, 3500);
         }
 
+        // Custom Confirm Modals
         function openConfirmModal(title, text, callback) {
             const modal = document.getElementById('customConfirmModal');
             if (!modal) return;
@@ -901,10 +939,116 @@
                 renderAllPosts();
                 applySpecialEventStyle();
                 checkAndSyncUIWithSession();
+                
+                // Tự động kéo dữ liệu mới từ Google Sheets về máy của người xem
+                pullLatestCloudData();
             } catch (err) {
                 console.error("Lỗi khi tải dữ liệu khởi động:", err);
             }
         };
+
+        // CLOUD DUAL-WAY DATA SYNC (ĐỌC DỮ LIỆU TỪ GOOGLE SHEETS)
+        function pullLatestCloudData() {
+            if (!state.googleScriptUrl) {
+                updateSyncUI('offline', 'Chưa cấu hình Google Sheets trong Cài đặt Admin!');
+                return;
+            }
+
+            updateSyncUI('loading', 'Đang kết nối cơ sở dữ liệu đám mây...');
+
+            // Gọi API dạng GET đến Google Script để đọc sạch toàn bộ dữ liệu hiện tại
+            fetch(`${state.googleScriptUrl}?action=readAll`, {
+                method: 'GET',
+                mode: 'cors'
+            })
+            .then(res => res.json())
+            .then(data => {
+                if (data && data.status === 'success') {
+                    // Cập nhật cơ sở dữ liệu nội bộ bằng dữ liệu từ Google Sheets
+                    if (data.users && data.users.length > 0) {
+                        state.users = data.users;
+                        localStorage.setItem('t3_users', JSON.stringify(state.users));
+                        // Cập nhật lại thông tin đăng nhập hiện tại nếu có thay đổi
+                        if (state.currentUser) {
+                            const updatedMe = state.users.find(u => u.id === state.currentUser.id);
+                            if (updatedMe) {
+                                state.currentUser = updatedMe;
+                                localStorage.setItem('t3_curr_user', JSON.stringify(updatedMe));
+                            }
+                        }
+                    }
+                    if (data.posts) {
+                        state.posts = data.posts;
+                        localStorage.setItem('t3_posts', JSON.stringify(state.posts));
+                    }
+                    if (data.dutyGrid && data.dutyGrid.length > 0) {
+                        state.dutyGrid = data.dutyGrid;
+                        localStorage.setItem('t3_duty_grid', JSON.stringify(state.dutyGrid));
+                    }
+                    if (data.settings) {
+                        // Nạp lại cấu hình Admin từ trang tính
+                        const s = data.settings;
+                        if (s.marquee !== undefined) state.adminTexts.marquee = s.marquee;
+                        if (s.slide3 !== undefined) state.adminTexts.slide3 = s.slide3;
+                        if (s.bgUrl !== undefined) state.headerConfig.bgUrl = s.bgUrl;
+                        if (s.logoText !== undefined) state.headerConfig.logoText = s.logoText;
+                        if (s.logoUrl !== undefined) state.headerConfig.logoUrl = s.logoUrl;
+                        if (s.height !== undefined) state.headerConfig.height = parseInt(s.height) || 180;
+                        if (s.scale !== undefined) state.headerConfig.scale = parseInt(s.scale) || 100;
+                        if (s.posX !== undefined) state.headerConfig.posX = parseInt(s.posX) || 50;
+                        if (s.posY !== undefined) state.headerConfig.posY = parseInt(s.posY) || 50;
+                        if (s.fontStyle !== undefined) state.headerConfig.fontStyle = s.fontStyle;
+                        if (s.sothiduaLabel !== undefined) state.adminLinks.sothiduaLabel = s.sothiduaLabel;
+                        if (s.sothiduaUrl !== undefined) state.adminLinks.sothiduaUrl = s.sothiduaUrl;
+                        if (s.specialEvent !== undefined) state.specialEvent = s.specialEvent;
+                        if (s.youtubePlaylist !== undefined) state.youtubePlaylist = s.youtubePlaylist;
+
+                        localStorage.setItem('t3_admin_texts', JSON.stringify(state.adminTexts));
+                        localStorage.setItem('t3_header_config', JSON.stringify(state.headerConfig));
+                        localStorage.setItem('t3_admin_links', JSON.stringify(state.adminLinks));
+                        localStorage.setItem('t3_special_event', state.specialEvent);
+                        localStorage.setItem('t3_yt_playlist', state.youtubePlaylist);
+                    }
+
+                    // Rerender lại toàn bộ giao diện sau khi nhận được thông tin mới nhất
+                    renderDutyGrid();
+                    renderHeaderConfig();
+                    renderAdminLinks();
+                    renderAllPosts();
+                    applySpecialEventStyle();
+                    checkAndSyncUIWithSession();
+
+                    updateSyncUI('online', `Đã đồng bộ dữ liệu lúc ${new Date().toLocaleTimeString()}`);
+                    showToast('Đã tải và đồng bộ dữ liệu đám mây mới nhất!', 'success');
+                } else {
+                    updateSyncUI('offline', 'Không thể giải mã phản hồi của Google Sheets.');
+                }
+            })
+            .catch(err => {
+                console.error("Lỗi đồng bộ đám mây:", err);
+                updateSyncUI('offline', 'Mạng lỗi / Chưa thể kết nối đám mây.');
+            });
+        }
+
+        function updateSyncUI(status, text) {
+            const dot = document.getElementById('syncDot');
+            const txt = document.getElementById('syncStatusText');
+            const spinner = document.getElementById('syncSpinner');
+
+            if (!dot || !txt || !spinner) return;
+
+            txt.textContent = text;
+            if (status === 'online') {
+                dot.className = 'w-2.5 h-2.5 bg-green-500 rounded-full';
+                spinner.classList.remove('animate-spin');
+            } else if (status === 'loading') {
+                dot.className = 'w-2.5 h-2.5 bg-yellow-500 rounded-full animate-ping';
+                spinner.classList.add('animate-spin');
+            } else {
+                dot.className = 'w-2.5 h-2.5 bg-red-500 rounded-full';
+                spinner.classList.remove('animate-spin');
+            }
+        }
 
         function populateYearSelectors() {
             const elements = ['regBirthYear', 'editBirthYear', 'recBirthYear'];
@@ -926,16 +1070,34 @@
             const header = document.getElementById('headerContainer');
             const bgImg = document.getElementById('headerBgImg');
             const logo = document.getElementById('logoContainer');
+            const body = document.getElementById('bodyWrapper');
 
             if (header && bgImg && logo) {
+                // Background image setup
                 if (state.headerConfig.bgUrl) {
                     bgImg.style.backgroundImage = `url('${state.headerConfig.bgUrl}')`;
                     bgImg.style.backgroundSize = `${state.headerConfig.scale}%`;
+                    bgImg.style.backgroundPosition = `${state.headerConfig.posX}% ${state.headerConfig.posY}%`;
                 } else {
                     bgImg.style.backgroundImage = 'none';
                 }
                 header.style.height = `${state.headerConfig.height}px`;
-                logo.textContent = state.headerConfig.logoText;
+
+                // Logo customization (Image or text)
+                if (state.headerConfig.logoUrl) {
+                    logo.style.backgroundImage = `url('${state.headerConfig.logoUrl}')`;
+                    logo.textContent = '';
+                } else {
+                    logo.style.backgroundImage = 'none';
+                    logo.textContent = state.headerConfig.logoText || 'HỘI ĐỒNG TỔ 3 - LỚP 9A3';
+                }
+
+                // Global / local font customization
+                if (body) {
+                    // Reset existing font classes
+                    body.classList.remove('font-inter', 'font-montserrat', 'font-playfair', 'font-roboto', 'font-patrick', 'font-quicksand');
+                    body.classList.add(state.headerConfig.fontStyle || 'font-inter');
+                }
             }
         }
 
@@ -1064,11 +1226,11 @@
             // Pre-fill texts safely
             const customMarquee = document.getElementById('customMarqueeText');
             if (customMarquee) {
-                customMarquee.textContent = state.adminTexts.marquee ? ` • ${state.adminTexts.marquee}` : '';
+                customMarquee.innerHTML = state.adminTexts.marquee ? ` • ${state.adminTexts.marquee}` : '';
             }
             const specSlide = document.getElementById('specialSlideText');
             if (specSlide) {
-                specSlide.textContent = state.adminTexts.slide3;
+                specSlide.innerHTML = state.adminTexts.slide3;
             }
 
             // Fill admin settings inputs safely
@@ -1076,9 +1238,12 @@
                 'adminMarqueeInput': state.adminTexts.marquee,
                 'adminSlide3Input': state.adminTexts.slide3,
                 'adminHeaderBgInput': state.headerConfig.bgUrl,
-                'adminLogoInput': state.headerConfig.logoText,
+                'adminLogoInput': state.headerConfig.logoUrl || state.headerConfig.logoText,
                 'adminHeaderHeight': state.headerConfig.height,
                 'adminBgScale': state.headerConfig.scale,
+                'adminBgPosX': state.headerConfig.posX,
+                'adminBgPosY': state.headerConfig.posY,
+                'adminFontSelect': state.headerConfig.fontStyle,
                 'adminSothiduaLabel': state.adminLinks.sothiduaLabel,
                 'adminSothiduaUrl': state.adminLinks.sothiduaUrl,
                 'adminGoogleScriptUrl': state.googleScriptUrl,
@@ -1219,6 +1384,7 @@
             state.users.push(newUser);
             localStorage.setItem('t3_users', JSON.stringify(state.users));
 
+            // Đẩy dữ liệu đăng ký mới lên Google Sheets đám mây
             syncToGoogleSheets('register', newUser);
 
             state.currentUser = newUser;
@@ -1313,12 +1479,37 @@
 
         function handleEditProfile(event) {
             event.preventDefault();
-            // Tránh submit form mặc định, xử lý qua modal custom
+            openConfirmModal('Xác nhận thay đổi', 'Bạn có chắc chắn muốn cập nhật toàn bộ thông tin tài khoản cá nhân của bạn không?', applyProfileChanges);
         }
 
         function applyProfileChanges() {
             const user = state.currentUser;
             if (!user) return;
+
+            const now = Date.now();
+            const thirtyDaysMs = 30 * 24 * 60 * 60 * 1000;
+            
+            // Lấy vết lịch sử đổi của người dùng này
+            const editHistoryKey = 't3_edit_history_' + user.id;
+            let editHistory = JSON.parse(localStorage.getItem(editHistoryKey)) || [];
+            
+            // Lọc ra các mốc thời gian sửa đổi trong vòng 30 ngày qua
+            editHistory = editHistory.filter(timestamp => (now - timestamp) < thirtyDaysMs);
+
+            if (user.role === 'admin') {
+                // Admin được 3 lần / 1 tháng
+                if (editHistory.length >= 3) {
+                    showToast('Admin chỉ được phép chỉnh sửa tối đa 3 lần một tháng!', 'error');
+                    return;
+                }
+            } else {
+                // User thường chỉ được 1 lần / 1 tháng
+                if (editHistory.length >= 1) {
+                    const nextAvailableDate = new Date(editHistory[0] + thirtyDaysMs);
+                    showToast(`Tài khoản thường giới hạn chỉnh sửa 1 lần/tháng. Ngày tiếp theo bạn có thể sửa là: ${nextAvailableDate.toLocaleDateString('vi-VN')}`, 'error');
+                    return;
+                }
+            }
 
             const updatedName = document.getElementById('editName').value.trim();
             const updatedBirthYear = document.getElementById('editBirthYear').value;
@@ -1340,10 +1531,15 @@
                     state.users[userIndex].password = updatedPassword;
                 }
 
+                // Ghi nhận mốc thời gian vừa đổi vào lịch sử
+                editHistory.push(now);
+                localStorage.setItem(editHistoryKey, JSON.stringify(editHistory));
+
                 state.currentUser = state.users[userIndex];
                 localStorage.setItem('t3_users', JSON.stringify(state.users));
                 localStorage.setItem('t3_curr_user', JSON.stringify(state.currentUser));
 
+                // Đồng bộ thay đổi này lên Google Sheets (Ghi vào Trang 2: Sửa đổi)
                 syncToGoogleSheets('edit_profile', {
                     ...state.currentUser,
                     logMessage: 'Sửa đổi thông tin cá nhân'
@@ -1448,6 +1644,9 @@
             localStorage.setItem('t3_posts', JSON.stringify(state.posts));
             document.getElementById('postTextContent').value = '';
 
+            // Đồng bộ bài viết mới viết lên Google Sheets đám mây ngay lập tức
+            syncToGoogleSheets('submit_post', newPost);
+
             renderAllPosts();
             showToast('Bài đăng của bạn đã xuất hiện thành công!');
         }
@@ -1462,6 +1661,10 @@
             if (!activePostIdToDelete) return;
             state.posts = state.posts.filter(p => p.id !== activePostIdToDelete);
             localStorage.setItem('t3_posts', JSON.stringify(state.posts));
+            
+            // Đồng bộ thao tác xóa bài viết lên Google Sheets đám mây
+            syncToGoogleSheets('delete_post', { id: activePostIdToDelete });
+
             renderAllPosts();
             showToast('Bài đăng đã được thu hồi!');
             activePostIdToDelete = null;
@@ -1497,6 +1700,8 @@
             }
 
             localStorage.setItem('t3_ban_list', JSON.stringify(banList));
+            
+            // Đồng bộ lệnh cấm thành viên lên Trang 3 Google Sheets đám mây
             syncToGoogleSheets('ban', banInfo);
             showToast(`Đã cấm tài khoản ${userName} thành công!`, 'success');
         }
@@ -1629,6 +1834,9 @@
             state.dutyGrid = updatedGrid;
             localStorage.setItem('t3_duty_grid', JSON.stringify(state.dutyGrid));
             
+            // Đồng bộ lịch trực mới biên soạn lên đám mây Google Sheets
+            syncToGoogleSheets('save_duty', state.dutyGrid);
+
             renderDutyGrid();
             closeDutyEditor();
             showToast('Cập nhật Sổ trực tuần thành công!', 'success');
@@ -1643,18 +1851,51 @@
             state.adminTexts.slide3 = slide3;
 
             localStorage.setItem('t3_admin_texts', JSON.stringify(state.adminTexts));
+            
+            // Đồng bộ tin nhắn đặc biệt & thông báo chạy của Admin lên đám mây
+            syncToGoogleSheets('save_settings', {
+                key: 'texts',
+                marquee: marquee,
+                slide3: slide3
+            });
+
             checkAndSyncUIWithSession();
             showToast('Thông báo và slide quảng bá đã được cập nhật!', 'success');
         }
 
         function saveAdminHeaderSettings() {
             const bgUrl = document.getElementById('adminHeaderBgInput').value.trim();
-            const logoText = document.getElementById('adminLogoInput').value.trim();
+            const logoInputVal = document.getElementById('adminLogoInput').value.trim();
             const height = parseInt(document.getElementById('adminHeaderHeight').value) || 180;
             const scale = parseInt(document.getElementById('adminBgScale').value) || 100;
+            const posX = parseInt(document.getElementById('adminBgPosX').value) || 50;
+            const posY = parseInt(document.getElementById('adminBgPosY').value) || 50;
+            const fontStyle = document.getElementById('adminFontSelect').value;
 
-            state.headerConfig = { bgUrl, logoText, height, scale };
+            // Kiểm tra xem logo nhập vào là URL ảnh hay là chữ văn bản thường
+            let logoText = 'HỘI ĐỒNG TỔ 3 - LỚP 9A3';
+            let logoUrl = '';
+            if (logoInputVal.startsWith('http://') || logoInputVal.startsWith('https://') || logoInputVal.startsWith('data:image/')) {
+                logoUrl = logoInputVal;
+            } else {
+                logoText = logoInputVal;
+            }
+
+            state.headerConfig = { bgUrl, logoText, logoUrl, height, scale, posX, posY, fontStyle };
             localStorage.setItem('t3_header_config', JSON.stringify(state.headerConfig));
+
+            // Đồng bộ thiết kế Header lên đám mây
+            syncToGoogleSheets('save_settings', {
+                key: 'header',
+                bgUrl: bgUrl,
+                logoText: logoText,
+                logoUrl: logoUrl,
+                height: height,
+                scale: scale,
+                posX: posX,
+                posY: posY,
+                fontStyle: fontStyle
+            });
 
             renderHeaderConfig();
             showToast('Đã lưu cấu hình thiết kế Header!', 'success');
@@ -1668,6 +1909,13 @@
             }
             state.youtubePlaylist = playlistId;
             localStorage.setItem('t3_yt_playlist', playlistId);
+
+            // Đồng bộ danh sách nhạc YouTube lên đám mây
+            syncToGoogleSheets('save_settings', {
+                key: 'music',
+                youtubePlaylist: playlistId
+            });
+
             renderMusicPlayer();
             showToast('Đã cấu hình danh sách bài hát mới!', 'success');
         }
@@ -1679,6 +1927,13 @@
             state.adminLinks = { sothiduaLabel: label, sothiduaUrl: url };
             localStorage.setItem('t3_admin_links', JSON.stringify(state.adminLinks));
 
+            // Đồng bộ link sổ thi đua của Admin lên đám mây
+            syncToGoogleSheets('save_settings', {
+                key: 'links',
+                sothiduaLabel: label,
+                sothiduaUrl: url
+            });
+
             renderAdminLinks();
             showToast('Đã cập nhật cấu hình liên kết nút!', 'success');
         }
@@ -1688,6 +1943,9 @@
             state.googleScriptUrl = url;
             localStorage.setItem('t3_gs_url', url);
             showToast('Đã lưu địa chỉ tích hợp Google Sheets API!', 'success');
+            
+            // Kích hoạt đồng bộ đám mây ngay sau khi dán link
+            pullLatestCloudData();
         }
 
         function syncAllLocalUsersToSheets() {
@@ -1700,19 +1958,26 @@
                 return;
             }
 
-            showToast('Đang tiến hành đồng bộ dữ liệu...');
+            showToast('Đang tiến hành đồng bộ toàn bộ dữ liệu tài khoản lên Google Sheets...');
             let successCount = 0;
             state.users.forEach(user => {
                 syncToGoogleSheets('register', user);
                 successCount++;
             });
-            showToast(`Đã gửi yêu cầu đồng bộ ${successCount} tài khoản lên Google Sheets!`, 'success');
+            showToast(`Đã đồng bộ thành công ${successCount} tài khoản lên Google Sheets!`, 'success');
         }
 
         function saveSpecialEvent() {
             const eventVal = document.getElementById('adminSpecialEventSelect').value;
             state.specialEvent = eventVal;
             localStorage.setItem('t3_special_event', eventVal);
+
+            // Đồng bộ trạng thái sự kiện đặc biệt lên đám mây
+            syncToGoogleSheets('save_settings', {
+                key: 'special_event',
+                specialEvent: eventVal
+            });
+
             applySpecialEventStyle();
             showToast('Sự kiện đặc biệt đã được áp dụng!', 'success');
         }
@@ -1872,7 +2137,7 @@
             }, 1500);
         }
 
-        // API SHEETS INTERACTION
+        // API SHEETS INTERACTION (WRITE CHANNEL)
         function syncToGoogleSheets(type, dataPayload) {
             if (!state.googleScriptUrl) return;
 
@@ -1883,14 +2148,14 @@
 
             fetch(state.googleScriptUrl, {
                 method: 'POST',
-                mode: 'no-cors',
+                mode: 'no-cors', // Sử dụng no-cors để tương thích trong iFrame GitHub
                 headers: {
                     'Content-Type': 'application/json',
                 },
                 body: JSON.stringify(params)
             })
             .then(() => {
-                console.log('Đã gửi yêu cầu đồng bộ Google Sheets');
+                console.log('Đã gửi yêu cầu đồng bộ thành công lên Google Sheets');
             })
             .catch(err => {
                 console.warn('Kết nối API Google Sheets bị gián đoạn:', err);
